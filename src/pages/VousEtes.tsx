@@ -4,6 +4,9 @@ import { professions } from '@/data/professionData';
 import ProfessionSelector from '@/components/profession/ProfessionSelector';
 import ServiceList from '@/components/profession/ServiceList';
 import { motion } from 'framer-motion';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
 
 const VousEtes = () => {
   const [activeProfession, setActiveProfession] = useState(professions[0].id);
@@ -14,6 +17,9 @@ const VousEtes = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Navigation */}
+      <Navigation />
+
       {/* Header */}
       <div className="pt-24 pb-16 px-4 md:px-6 max-w-7xl mx-auto">
         <motion.div
@@ -63,7 +69,26 @@ const VousEtes = () => {
             <ServiceList services={selectedProfession.services} />
           </motion.div>
         )}
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-20 mt-12">
+          <Link 
+            to="/contact" 
+            className="px-6 py-3 text-base font-medium rounded-full transition-all hover:shadow-lg bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto text-center"
+          >
+            Contactez-nous
+          </Link>
+          <Link 
+            to="/devis" 
+            className="px-6 py-3 text-base font-medium rounded-full transition-all hover:shadow-lg bg-darkblue-800 hover:bg-darkblue-900 text-white w-full sm:w-auto text-center"
+          >
+            Demander un devis
+          </Link>
+        </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
