@@ -62,9 +62,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   </div>
                 </div>
                 
-                {/* Photo of a smiling professional woman with glasses */}
+                {/* Photo of a different professional woman with glasses */}
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
                   alt="Femme professionnelle souriante avec des lunettes" 
                   className="w-full h-full object-cover"
                 />
