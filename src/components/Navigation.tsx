@@ -30,7 +30,7 @@ const Navigation = () => {
     { name: 'Vous êtes', path: '/vous-etes' },
     { name: 'Nos tarifs', path: '/pricing' },
     { name: 'Nos références', path: '/references' },
-    { name: 'Linkeo et vous', path: '/about' },
+    { name: 'i-numeria et vous', path: '/about' },
   ];
 
   return (
@@ -47,10 +47,11 @@ const Navigation = () => {
           className="flex items-center space-x-2" 
           onClick={closeMenu}
         >
-          <div className="w-10 h-10 rounded-full bg-darkblue-800 flex items-center justify-center text-white font-bold">
-            L
-          </div>
-          <span className="text-darkblue-900 font-bold text-xl">Linkeo</span>
+          <img 
+            src="/lovable-uploads/d5ddb599-d81f-489d-af1d-fb8f195df9b3.png" 
+            alt="i-numeria logo" 
+            className="h-10 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -110,10 +111,11 @@ const Navigation = () => {
                 className="flex items-center space-x-2" 
                 onClick={closeMenu}
               >
-                <div className="w-10 h-10 rounded-full bg-darkblue-800 flex items-center justify-center text-white font-bold">
-                  L
-                </div>
-                <span className="text-darkblue-900 font-bold text-xl">Linkeo</span>
+                <img 
+                  src="/lovable-uploads/d5ddb599-d81f-489d-af1d-fb8f195df9b3.png" 
+                  alt="i-numeria logo" 
+                  className="h-10 w-auto"
+                />
               </Link>
               <button 
                 className="p-2 text-darkblue-900"

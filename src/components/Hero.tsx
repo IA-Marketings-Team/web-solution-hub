@@ -51,14 +51,14 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                {/* Stylized logo above the woman's head */}
+                {/* i-numeria logo above the woman's head */}
                 <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-3 shadow-lg">
                   <div className="w-14 h-14 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
-                      <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1E40AF"/>
-                      <path d="M2 17L12 22L22 17" stroke="#E11D48" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M2 12L12 17L22 12" stroke="#1E40AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                    <img 
+                      src="/lovable-uploads/d5ddb599-d81f-489d-af1d-fb8f195df9b3.png" 
+                      alt="i-numeria logo" 
+                      className="w-12 h-auto"
+                    />
                   </div>
                 </div>
                 

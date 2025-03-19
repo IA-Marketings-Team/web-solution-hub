@@ -24,10 +24,11 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-darkblue-900 font-bold">
-                L
-              </div>
-              <span className="text-white font-bold text-xl">Linkeo</span>
+              <img 
+                src="/lovable-uploads/d5ddb599-d81f-489d-af1d-fb8f195df9b3.png" 
+                alt="i-numeria logo" 
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-white/80 mb-6">
               Des solutions digitales clés en main pour booster votre activité depuis plus de 20 ans.
@@ -117,7 +118,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                   className="text-white/80 hover:text-white transition-colors hover-slide-right inline-flex items-center group"
                 >
                   <ArrowRight size={14} className="mr-2 transition-transform group-hover:translate-x-1" />
-                  Linkeo et vous
+                  i-numeria et vous
                 </Link>
               </li>
             </ul>
@@ -178,10 +179,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li className="flex items-center">
                 <Mail size={18} className="text-red-500 mr-3 flex-shrink-0" />
                 <a 
-                  href="mailto:contact@linkeo.com" 
+                  href="mailto:contact@i-numeria.com" 
                   className="text-white/80 hover:text-white transition-colors"
                 >
-                  contact@linkeo.com
+                  contact@i-numeria.com
                 </a>
               </li>
               <li className="flex items-center">
@@ -200,7 +201,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <div className="pt-8 border-t border-darkblue-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/60 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Linkeo. Tous droits réservés.
+              © {new Date().getFullYear()} i-numeria. Tous droits réservés.
             </p>
             <div className="flex flex-wrap items-center gap-4 text-sm text-white/60">
               <Link 
