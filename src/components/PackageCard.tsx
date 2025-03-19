@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -25,6 +25,7 @@ const PackageCard = ({
   image,
   isPrimary = false,
 }: PackageCardProps) => {
+  // Use the site's color scheme
   const bgColor = isPrimary 
     ? "bg-[#9b87f5] text-white" 
     : "bg-white border border-gray-200";
@@ -41,7 +42,7 @@ const PackageCard = ({
             {type}
           </Badge>
           <Badge className={`${isPrimary ? "bg-white/20 hover:bg-white/30 text-white" : "bg-[#E5DEFF] hover:bg-[#D6BCFA] text-[#7E69AB]"}`}>
-            Nos packs
+            Essentiel
           </Badge>
         </div>
         

@@ -1,11 +1,7 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
-import { ShoppingBag, UserRound } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
 import PackageCard from './PackageCard';
 import { artisanPackage, commercantPackage } from '@/data/packageData';
 
@@ -39,36 +35,20 @@ const Packages = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="artisans" className="w-full mx-auto">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-10 bg-[#E5DEFF]">
-            <TabsTrigger 
-              value="artisans" 
-              className="flex items-center gap-2 py-3 data-[state=active]:bg-[#9b87f5] data-[state=active]:text-white"
-            >
-              <UserRound size={18} />
-              <span>Artisans</span>
-            </TabsTrigger>
-            <TabsTrigger 
-              value="commercants" 
-              className="flex items-center gap-2 py-3 data-[state=active]:bg-[#9b87f5] data-[state=active]:text-white"
-            >
-              <ShoppingBag size={18} />
-              <span>Commerçants</span>
-            </TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="artisans" className="pt-4">
-            <div className="max-w-xl mx-auto">
-              <PackageCard {...artisanPackage} />
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="commercants" className="pt-4">
-            <div className="max-w-xl mx-auto">
-              <PackageCard {...commercantPackage} />
-            </div>
-          </TabsContent>
-        </Tabs>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className={cn(
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "transition-all duration-700 delay-100"
+          )}>
+            <PackageCard {...artisanPackage} />
+          </div>
+          <div className={cn(
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "transition-all duration-700 delay-300"
+          )}>
+            <PackageCard {...commercantPackage} />
+          </div>
+        </div>
       </div>
     </section>
   );
