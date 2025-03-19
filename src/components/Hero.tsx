@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-3 shadow-lg">
                   <div className="w-14 h-14 flex items-center justify-center">
                     <img 
-                      src="/lovable-uploads/d5ddb599-d81f-489d-af1d-fb8f195df9b3.png" 
+                      src="/lovable-uploads/9b43df0e-0943-4c2f-9433-cce569989739.png" 
                       alt="i-numeria logo" 
                       className="w-12 h-auto"
                     />

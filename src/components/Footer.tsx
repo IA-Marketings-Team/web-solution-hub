@@ -25,9 +25,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <img 
-                src="/lovable-uploads/d5ddb599-d81f-489d-af1d-fb8f195df9b3.png" 
+                src="/lovable-uploads/9b43df0e-0943-4c2f-9433-cce569989739.png" 
                 alt="i-numeria logo" 
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
             </div>
             <p className="text-white/80 mb-6">
