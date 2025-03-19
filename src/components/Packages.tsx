@@ -2,11 +2,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
-import { Check, ArrowRight, UserRound, ShoppingBag } from 'lucide-react';
+import { Check, ArrowRight, UserRound, ShoppingBag, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Badge } from '@/components/ui/badge';
 
 const PackageItem = ({ children }: { children: React.ReactNode }) => (
   <div className="flex items-start gap-2 mb-4">
@@ -15,11 +16,144 @@ const PackageItem = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const PackageCard = ({ 
+  title, 
+  description, 
+  features, 
+  highlight = false 
+}: { 
+  title: string; 
+  description: string; 
+  features: { title: string; description?: string }[]; 
+  highlight?: boolean;
+}) => (
+  <Card className={cn(
+    "border-2 transition-all duration-300 hover:shadow-lg",
+    highlight ? "border-red-400 shadow-md" : "border-darkblue-100"
+  )}>
+    <CardHeader className={cn(
+      "text-center rounded-t-lg pb-8",
+      highlight 
+        ? "bg-gradient-to-r from-red-50 to-red-100" 
+        : "bg-gradient-to-r from-darkblue-50 to-darkblue-100"
+    )}>
+      {highlight && (
+        <Badge className="mb-2 mx-auto bg-red-500 hover:bg-red-600">
+          <Sparkles size={14} className="mr-1" /> Recommandé
+        </Badge>
+      )}
+      <div className={cn(
+        "px-3 py-1 bg-white rounded-full inline-block mb-2 font-medium",
+        highlight ? "text-red-600" : "text-darkblue-900"
+      )}>
+        Pack Essentiel
+      </div>
+      <CardTitle className="text-3xl font-bold text-darkblue-900">{title}</CardTitle>
+      <CardDescription className="text-darkblue-700">{description}</CardDescription>
+    </CardHeader>
+    <CardContent className="p-6">
+      <div className="grid md:grid-cols-2 gap-6">
+        {features.map((feature, index) => (
+          <div key={index}>
+            <PackageItem>
+              <span className="font-medium">{feature.title}</span>
+              {feature.description && (
+                <>: {feature.description}</>
+              )}
+            </PackageItem>
+          </div>
+        ))}
+      </div>
+    </CardContent>
+    <CardFooter className="flex justify-center pb-8">
+      <Button 
+        variant={highlight ? "default" : "secondary"} 
+        size="lg" 
+        className={cn(
+          "group font-medium",
+          highlight ? "bg-red-600 hover:bg-red-700" : ""
+        )}
+      >
+        Demander un devis
+        <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+      </Button>
+    </CardFooter>
+  </Card>
+);
+
 const Packages = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const artisanFeatures = [
+    { 
+      title: "Création d'un site web responsive design" 
+    },
+    { 
+      title: "Quote by Linkeo", 
+      description: "Formulaire de devis en ligne, outil devis/facturation, bibliothèque de prix et produits, base de données clients, intégration GMB et réseaux sociaux" 
+    },
+    { 
+      title: "Fiche d'établissement Google", 
+      description: "Création et administration de la fiche GMB, intégration de logo et photos, QR Code pour avis, animation trimestrielle, campagnes de collecte d'avis" 
+    },
+    { 
+      title: "Deliver by Linkeo", 
+      description: "E-boutique (Click & Collect), paiement en ligne, statistiques d'activité" 
+    },
+    { 
+      title: "E-réputation", 
+      description: "Audit, publication hebdomadaire, newsletter, modération des avis, rapports mensuels, expert dédié" 
+    },
+    { 
+      title: "Booster SEO", 
+      description: "Rédaction de 30 landing pages, inscriptions annuaires, articles de blog" 
+    },
+    { 
+      title: "Achat d'espace", 
+      description: "Sélection des mots clés, création et optimisation des annonces, suivi des budgets" 
+    },
+    { 
+      title: "Service et accompagnement", 
+      description: "Suivi annuel, optimisation SEM, rapports SEA, accès au service client, hébergement, interface administrateur, modifications du site, call tracking" 
+    }
+  ];
+
+  const commercantsFeatures = [
+    { 
+      title: "Création d'un site web responsive design" 
+    },
+    { 
+      title: "Fiche d'établissement Google", 
+      description: "Création et administration de la fiche GMB, intégration de logo et photos, QR Code pour avis, animation trimestrielle, campagnes de collecte d'avis" 
+    },
+    { 
+      title: "Deliver by Linkeo", 
+      description: "E-boutique (Click & Collect), paiement en ligne, statistiques d'activité" 
+    },
+    { 
+      title: "E-réputation", 
+      description: "Audit, publication hebdomadaire, newsletter, modération des avis, rapports mensuels, expert dédié" 
+    },
+    { 
+      title: "Quote by Linkeo", 
+      description: "Formulaire de devis en ligne, outil devis/facturation, bibliothèque de prix et produits, base de données clients, intégration GMB et réseaux sociaux" 
+    },
+    { 
+      title: "Booster SEO", 
+      description: "Rédaction de 30 landing pages, inscriptions annuaires, articles de blog" 
+    },
+    { 
+      title: "Achat d'espace", 
+      description: "Sélection des mots clés, création et optimisation des annonces, suivi des budgets" 
+    },
+    { 
+      title: "Service et accompagnement", 
+      description: "Suivi annuel, optimisation SEM, rapports SEA, accès au service client, hébergement, interface administrateur, modifications du site, call tracking" 
+    }
+  ];
 
   return (
     <section className="py-20 bg-white" id="packages">
@@ -58,99 +192,20 @@ const Packages = () => {
           </TabsList>
           
           <TabsContent value="artisans" className="pt-4">
-            <Card className="border-2 border-darkblue-100">
-              <CardHeader className="text-center bg-gradient-to-r from-darkblue-50 to-darkblue-100 rounded-t-lg pb-8">
-                <div className="px-3 py-1 bg-white text-darkblue-900 rounded-full inline-block mb-2 font-medium">Pack Essentiel</div>
-                <CardTitle className="text-3xl font-bold text-darkblue-900">Pour les Artisans</CardTitle>
-                <CardDescription className="text-darkblue-700">Solution complète pour développer votre activité</CardDescription>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <PackageItem>
-                      <span className="font-medium">Création d'un site web responsive design</span>
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Quote by Linkeo :</span> Formulaire de devis en ligne, outil devis/facturation, bibliothèque de prix et produits, base de données clients, intégration GMB et réseaux sociaux.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Fiche d'établissement Google :</span> Création et administration de la fiche GMB, intégration de logo et photos, QR Code pour avis, animation trimestrielle, campagnes de collecte d'avis.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Deliver by Linkeo :</span> E-boutique (Click & Collect), paiement en ligne, statistiques d'activité.
-                    </PackageItem>
-                  </div>
-                  <div>
-                    <PackageItem>
-                      <span className="font-medium">E-réputation :</span> Audit, publication hebdomadaire, newsletter, modération des avis, rapports mensuels, expert dédié.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Booster SEO :</span> Rédaction de 30 landing pages, inscriptions annuaires, articles de blog.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Achat d'espace :</span> Sélection des mots clés, création et optimisation des annonces, suivi des budgets.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Service et accompagnement :</span> Suivi annuel, optimisation SEM, rapports SEA, accès au service client, hébergement, interface administrateur, modifications du site, call tracking.
-                    </PackageItem>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-center pb-8">
-                <Button variant="secondary" size="lg" className="group font-medium">
-                  Demander un devis
-                  <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </CardFooter>
-            </Card>
+            <PackageCard 
+              title="Pour les Artisans" 
+              description="Solution complète pour développer votre activité"
+              features={artisanFeatures}
+              highlight={true}
+            />
           </TabsContent>
           
           <TabsContent value="commercants" className="pt-4">
-            <Card className="border-2 border-darkblue-100">
-              <CardHeader className="text-center bg-gradient-to-r from-darkblue-50 to-darkblue-100 rounded-t-lg pb-8">
-                <div className="px-3 py-1 bg-white text-darkblue-900 rounded-full inline-block mb-2 font-medium">Pack Essentiel</div>
-                <CardTitle className="text-3xl font-bold text-darkblue-900">Pour les Commerçants</CardTitle>
-                <CardDescription className="text-darkblue-700">Solution complète pour développer votre commerce</CardDescription>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <PackageItem>
-                      <span className="font-medium">Création d'un site web responsive design</span>
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Fiche d'établissement Google :</span> Création et administration de la fiche GMB, intégration de logo et photos, QR Code pour avis, animation trimestrielle, campagnes de collecte d'avis.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Deliver by Linkeo :</span> E-boutique (Click & Collect), paiement en ligne, statistiques d'activité.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">E-réputation :</span> Audit, publication hebdomadaire, newsletter, modération des avis, rapports mensuels, expert dédié.
-                    </PackageItem>
-                  </div>
-                  <div>
-                    <PackageItem>
-                      <span className="font-medium">Quote by Linkeo :</span> Formulaire de devis en ligne, outil devis/facturation, bibliothèque de prix et produits, base de données clients, intégration GMB et réseaux sociaux.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Booster SEO :</span> Rédaction de 30 landing pages, inscriptions annuaires, articles de blog.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Achat d'espace :</span> Sélection des mots clés, création et optimisation des annonces, suivi des budgets.
-                    </PackageItem>
-                    <PackageItem>
-                      <span className="font-medium">Service et accompagnement :</span> Suivi annuel, optimisation SEM, rapports SEA, accès au service client, hébergement, interface administrateur, modifications du site, call tracking.
-                    </PackageItem>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-center pb-8">
-                <Button variant="secondary" size="lg" className="group font-medium">
-                  Demander un devis
-                  <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </CardFooter>
-            </Card>
+            <PackageCard 
+              title="Pour les Commerçants" 
+              description="Solution complète pour développer votre commerce"
+              features={commercantsFeatures}
+            />
           </TabsContent>
         </Tabs>
       </div>
