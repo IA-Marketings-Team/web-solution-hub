@@ -48,7 +48,7 @@ const Navigation = () => {
           onClick={closeMenu}
         >
           <img 
-            src="/lovable-uploads/9b43df0e-0943-4c2f-9433-cce569989739.png" 
+            src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
             alt="i-numeria logo" 
             className="h-10 w-auto"
           />
@@ -112,7 +112,7 @@ const Navigation = () => {
                 onClick={closeMenu}
               >
                 <img 
-                  src="/lovable-uploads/9b43df0e-0943-4c2f-9433-cce569989739.png" 
+                  src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
                   alt="i-numeria logo" 
                   className="h-10 w-auto"
                 />
