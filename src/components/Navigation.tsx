@@ -13,6 +13,11 @@ const Navigation = () => {
   const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
+    // Set initial scroll state when component mounts
+    if (window.scrollY > 10) {
+      setScrolled(true);
+    }
+    
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setScrolled(true);
@@ -33,11 +38,18 @@ const Navigation = () => {
     { name: 'i-numera et vous', path: '/contact' },
   ];
 
+  // Check if we're on a page with dark header (like Contact page)
+  const isDarkHeader = location.pathname === '/contact';
+  
   return (
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 lg:px-12',
-        scrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
+        scrolled 
+          ? 'bg-white/90 backdrop-blur-md shadow-md py-3' 
+          : isDarkHeader 
+            ? 'bg-darkblue-900/90 backdrop-blur-md py-5' 
+            : 'bg-transparent py-5'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -50,7 +62,7 @@ const Navigation = () => {
           <img 
             src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
             alt="i-numera logo" 
-            className="h-12 w-auto" // Increased from h-10 to h-12
+            className="h-12 w-auto" 
           />
         </Link>
 
@@ -64,7 +76,9 @@ const Navigation = () => {
                 'text-sm font-medium transition-colors hover:text-darkblue-600',
                 location.pathname === item.path 
                   ? 'text-darkblue-800' 
-                  : 'text-darkblue-900/80'
+                  : (!scrolled && isDarkHeader) 
+                    ? 'text-white/90' 
+                    : 'text-darkblue-900/80'
               )}
             >
               {item.name}
@@ -76,13 +90,23 @@ const Navigation = () => {
         <div className="hidden lg:flex items-center space-x-4">
           <Link 
             to="/contact" 
-            className="px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg bg-red-600 hover:bg-red-700 text-white"
+            className={cn(
+              "px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg",
+              (!scrolled && isDarkHeader) 
+                ? "bg-red-600 hover:bg-red-700 text-white" 
+                : "bg-red-600 hover:bg-red-700 text-white"
+            )}
           >
             Contactez-nous
           </Link>
           <Link 
             to="/devis" 
-            className="px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg bg-darkblue-800 hover:bg-darkblue-900 text-white"
+            className={cn(
+              "px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg",
+              (!scrolled && isDarkHeader) 
+                ? "bg-white hover:bg-gray-100 text-darkblue-900" 
+                : "bg-darkblue-800 hover:bg-darkblue-900 text-white"
+            )}
           >
             Demander un devis
           </Link>
@@ -90,7 +114,10 @@ const Navigation = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="lg:hidden p-2 text-darkblue-900"
+          className={cn(
+            "lg:hidden p-2",
+            (!scrolled && isDarkHeader) ? "text-white" : "text-darkblue-900"
+          )}
           onClick={toggleMenu}
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
