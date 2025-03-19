@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MessageSquareQuestion, Star, HelpCircle } from 'lucide-react';
+import { HelpCircle, Star, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const FaqSidebar: React.FC = () => {
@@ -34,7 +34,7 @@ const FaqSidebar: React.FC = () => {
           Retrouvez les réponses aux questions les plus fréquentes sur la page FAQ
         </p>
         <Button variant="outline" className="w-full border-blue-500 text-blue-500 hover:bg-blue-50 flex items-center justify-center">
-          <MessageSquareQuestion className="h-4 w-4 mr-2" />
+          <MessageSquare className="h-4 w-4 mr-2" />
           Questions fréquentes
         </Button>
       </div>
