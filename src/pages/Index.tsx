@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Testimonials from '@/components/Testimonials';
+import Packages from '@/components/Packages';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 import { useLocation } from 'react-router-dom';
@@ -21,6 +22,7 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <Services />
+        <Packages />
         <Testimonials />
         <CallToAction />
       </main>
