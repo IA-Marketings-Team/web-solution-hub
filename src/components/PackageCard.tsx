@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Bookmark } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -26,56 +26,51 @@ const PackageCard = ({
   isPrimary = false,
 }: PackageCardProps) => {
   const bgColor = isPrimary 
-    ? "bg-darkblue-600" 
-    : "bg-white border border-darkblue-100";
+    ? "bg-[#9b87f5] text-white" 
+    : "bg-white border border-gray-200";
   
   const textColor = isPrimary ? "text-white" : "text-darkblue-900";
+  const mutedTextColor = isPrimary ? "text-white/80" : "text-darkblue-600";
   
   return (
-    <Card className={`overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-lg ${bgColor}`}>
-      {/* Card image section */}
-      <div className="relative h-64 overflow-hidden">
-        <img 
-          src={image} 
-          alt={title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute top-3 left-3">
-          <Badge className="bg-darkblue-600 hover:bg-darkblue-700">
-            Nos packs
-          </Badge>
-          <Badge className="ml-2 bg-darkblue-500 hover:bg-darkblue-600">
+    <Card className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${bgColor}`}>
+      {/* Card header */}
+      <div className="p-6 pb-4">
+        <div className="flex items-center justify-between mb-4">
+          <Badge className={`${isPrimary ? "bg-white/20 hover:bg-white/30 text-white" : "bg-[#E5DEFF] hover:bg-[#D6BCFA] text-[#7E69AB]"}`}>
             {type}
           </Badge>
+          <Badge className={`${isPrimary ? "bg-white/20 hover:bg-white/30 text-white" : "bg-[#E5DEFF] hover:bg-[#D6BCFA] text-[#7E69AB]"}`}>
+            Nos packs
+          </Badge>
+        </div>
+        
+        <h3 className={`text-2xl font-bold ${textColor} mb-6`}>{title}</h3>
+        
+        <div className="mb-5">
+          <div className={`text-sm ${mutedTextColor}`}>à partir de</div>
+          <div className={`text-3xl font-bold ${textColor} flex items-end`}>
+            {price}€ <span className="text-base font-normal ml-1 mb-1">HT/mois</span>
+          </div>
+          <div className={`text-sm ${mutedTextColor}`}>
+            {setupFee}€ ht de Frais de création
+          </div>
         </div>
       </div>
       
       {/* Card content */}
-      <div className="p-6">
-        <div className="flex items-center mb-3">
-          <Bookmark size={20} className={isPrimary ? "text-white" : "text-darkblue-600"} />
-          <span className={`ml-2 font-semibold text-lg ${textColor}`}>{title}</span>
-        </div>
-        
-        <div className="mb-5">
-          <div className="text-sm text-darkblue-400">à partir de</div>
-          <div className={`text-3xl font-bold ${textColor}`}>
-            {price}€ <span className="text-base font-normal">HT/mois</span>
-          </div>
-          <div className={`text-sm ${isPrimary ? "text-darkblue-200" : "text-darkblue-500"}`}>
-            {setupFee}€ ht de Frais de création
-          </div>
-        </div>
-        
-        <div className="space-y-1">
+      <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"}`}>
+        <div className="space-y-2">
           {features.map((feature, index) => (
-            <PackageFeatureItem key={index}>{feature}</PackageFeatureItem>
+            <PackageFeatureItem key={index} isPrimary={isPrimary}>{feature}</PackageFeatureItem>
           ))}
         </div>
         
-        <div className="mt-6">
+        <div className="mt-8">
           <Button 
-            className={`w-full group ${isPrimary ? "" : "bg-red-600 hover:bg-red-700"}`}
+            className={`w-full group ${isPrimary 
+              ? "bg-white text-[#7E69AB] hover:bg-gray-100" 
+              : "bg-[#9b87f5] hover:bg-[#8B5CF6] text-white"}`}
           >
             Je me lance !
             <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />

@@ -4,12 +4,15 @@ import { Check } from 'lucide-react';
 
 interface PackageFeatureItemProps {
   children: React.ReactNode;
+  isPrimary?: boolean;
 }
 
-const PackageFeatureItem = ({ children }: PackageFeatureItemProps) => (
+const PackageFeatureItem = ({ children, isPrimary = false }: PackageFeatureItemProps) => (
   <div className="flex items-start gap-2 mb-3">
-    <Check size={16} className="text-green-600 mt-0.5 shrink-0" />
-    <span className="text-darkblue-800 text-sm">{children}</span>
+    <div className={`rounded-full p-0.5 mt-0.5 ${isPrimary ? "bg-white/20" : "bg-[#E5DEFF]"}`}>
+      <Check size={12} className={isPrimary ? "text-white" : "text-[#7E69AB]"} />
+    </div>
+    <span className={`text-sm ${isPrimary ? "text-white/90" : "text-darkblue-800"}`}>{children}</span>
   </div>
 );
 

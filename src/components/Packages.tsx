@@ -28,7 +28,7 @@ const Packages = () => {
             transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1)'
           }}
         >
-          <div className="inline-block rounded-full px-3 py-1 text-sm bg-darkblue-100 text-darkblue-900 mb-4">
+          <div className="inline-block rounded-full px-3 py-1 text-sm bg-[#E5DEFF] text-[#7E69AB] mb-4">
             Nos offres
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-darkblue-900 tracking-tight mb-4">
@@ -40,12 +40,18 @@ const Packages = () => {
         </div>
 
         <Tabs defaultValue="artisans" className="w-full mx-auto">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-10">
-            <TabsTrigger value="artisans" className="flex items-center gap-2 py-3">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-10 bg-[#E5DEFF]">
+            <TabsTrigger 
+              value="artisans" 
+              className="flex items-center gap-2 py-3 data-[state=active]:bg-[#9b87f5] data-[state=active]:text-white"
+            >
               <UserRound size={18} />
               <span>Artisans</span>
             </TabsTrigger>
-            <TabsTrigger value="commercants" className="flex items-center gap-2 py-3">
+            <TabsTrigger 
+              value="commercants" 
+              className="flex items-center gap-2 py-3 data-[state=active]:bg-[#9b87f5] data-[state=active]:text-white"
+            >
               <ShoppingBag size={18} />
               <span>Commerçants</span>
             </TabsTrigger>
