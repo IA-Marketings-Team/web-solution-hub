@@ -51,36 +51,23 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="animate-float">
-                    <svg width="520" height="390" viewBox="0 0 520 390" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                      <rect x="40" y="20" width="440" height="280" rx="12" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="2"/>
-                      <rect x="60" y="50" width="400" height="40" rx="6" fill="#EEF2FF"/>
-                      <rect x="80" y="65" width="100" height="10" rx="2" fill="#4F46E5" fillOpacity="0.3"/>
-                      <rect x="200" y="65" width="80" height="10" rx="2" fill="#4F46E5" fillOpacity="0.3"/>
-                      <rect x="300" y="65" width="60" height="10" rx="2" fill="#4F46E5" fillOpacity="0.3"/>
-                      <rect x="380" y="65" width="60" height="10" rx="2" fill="#E11D48" fillOpacity="0.8"/>
-                      <rect x="60" y="110" width="190" height="160" rx="6" fill="#F1F5F9"/>
-                      <rect x="80" y="130" width="140" height="10" rx="2" fill="#0F172A"/>
-                      <rect x="80" y="150" width="100" height="8" rx="2" fill="#64748B"/>
-                      <rect x="80" y="166" width="120" height="8" rx="2" fill="#64748B"/>
-                      <rect x="80" y="182" width="90" height="8" rx="2" fill="#64748B"/>
-                      <rect x="80" y="210" width="80" height="30" rx="4" fill="#E11D48"/>
-                      <rect x="270" y="110" width="190" height="160" rx="6" fill="#F1F5F9"/>
-                      <rect x="290" y="130" width="140" height="10" rx="2" fill="#0F172A"/>
-                      <rect x="290" y="150" width="100" height="8" rx="2" fill="#64748B"/>
-                      <rect x="290" y="166" width="120" height="8" rx="2" fill="#64748B"/>
-                      <rect x="290" y="182" width="90" height="8" rx="2" fill="#64748B"/>
-                      <rect x="290" y="210" width="80" height="30" rx="4" fill="#1E40AF"/>
-                      <rect x="0" y="310" width="520" height="80" rx="8" fill="#1E40AF"/>
-                      <rect x="40" y="340" width="80" height="10" rx="2" fill="white" fillOpacity="0.8"/>
-                      <rect x="150" y="340" width="60" height="10" rx="2" fill="white" fillOpacity="0.6"/>
-                      <rect x="240" y="340" width="70" height="10" rx="2" fill="white" fillOpacity="0.6"/>
-                      <rect x="340" y="340" width="50" height="10" rx="2" fill="white" fillOpacity="0.6"/>
-                      <rect x="420" y="340" width="60" height="10" rx="2" fill="white" fillOpacity="0.6"/>
+                {/* Stylized logo above the man's head */}
+                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-3 shadow-lg">
+                  <div className="w-14 h-14 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
+                      <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1E40AF"/>
+                      <path d="M2 17L12 22L22 17" stroke="#E11D48" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M2 12L12 17L22 12" stroke="#1E40AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </div>
+                
+                {/* Photo of a smiling man with glasses */}
+                <img 
+                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952" 
+                  alt="Homme souriant avec des lunettes" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             {/* Decorative Elements */}
