@@ -17,7 +17,7 @@ const PartnerLogos = () => {
         >
           <img 
             src={logo.image} 
-            alt={logo.name} 
+            alt={`Projet ${index + 1}`} 
             className="max-h-16 max-w-full object-contain" 
           />
         </motion.div>

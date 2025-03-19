@@ -21,7 +21,7 @@ const ReferenceCard = ({ reference, index }: ReferenceCardProps) => {
         <Tag size={18} className="text-red-600 mr-2" />
         <span className="text-sm font-medium text-darkblue-700">{reference.sector}</span>
       </div>
-      <h3 className="text-xl font-semibold text-darkblue-900 mb-2">{reference.name}</h3>
+      <h3 className="text-xl font-semibold text-darkblue-900 mb-2">Projet : {reference.name}</h3>
       <p className="text-darkblue-700/80 text-sm mb-6 flex-grow">{reference.description}</p>
       <a 
         href={reference.url} 
@@ -29,7 +29,7 @@ const ReferenceCard = ({ reference, index }: ReferenceCardProps) => {
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 text-white bg-red-600 hover:bg-red-700 transition-colors px-4 py-2 rounded-lg font-medium text-sm"
       >
-        Visitez le site
+        Voir le projet
         <ExternalLink size={16} />
       </a>
     </motion.div>
