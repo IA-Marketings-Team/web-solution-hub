@@ -24,7 +24,7 @@ const Packages = () => {
             transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1)'
           }}
         >
-          <div className="inline-block rounded-full px-3 py-1 text-sm bg-[#E5DEFF] text-[#7E69AB] mb-4">
+          <div className="inline-block rounded-full px-3 py-1 text-sm bg-darkblue-100 text-darkblue-700 mb-4">
             Nos offres
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-darkblue-900 tracking-tight mb-4">

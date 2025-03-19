@@ -25,23 +25,29 @@ const PackageCard = ({
   image,
   isPrimary = false,
 }: PackageCardProps) => {
-  // Use the site's color scheme
+  // Use the site's color scheme with blue and red
   const bgColor = isPrimary 
-    ? "bg-[#9b87f5] text-white" 
+    ? "bg-darkblue-500 text-white" 
     : "bg-white border border-gray-200";
   
   const textColor = isPrimary ? "text-white" : "text-darkblue-900";
   const mutedTextColor = isPrimary ? "text-white/80" : "text-darkblue-600";
+  const badgeColor = isPrimary 
+    ? "bg-white/20 hover:bg-white/30 text-white" 
+    : "bg-darkblue-100 hover:bg-darkblue-200 text-darkblue-700";
+  const buttonColor = isPrimary 
+    ? "bg-white text-darkblue-700 hover:bg-gray-100" 
+    : "bg-red-500 hover:bg-red-600 text-white";
   
   return (
     <Card className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${bgColor}`}>
       {/* Card header */}
       <div className="p-6 pb-4">
         <div className="flex items-center justify-between mb-4">
-          <Badge className={`${isPrimary ? "bg-white/20 hover:bg-white/30 text-white" : "bg-[#E5DEFF] hover:bg-[#D6BCFA] text-[#7E69AB]"}`}>
+          <Badge className={badgeColor}>
             {type}
           </Badge>
-          <Badge className={`${isPrimary ? "bg-white/20 hover:bg-white/30 text-white" : "bg-[#E5DEFF] hover:bg-[#D6BCFA] text-[#7E69AB]"}`}>
+          <Badge className={badgeColor}>
             Essentiel
           </Badge>
         </div>
@@ -69,9 +75,7 @@ const PackageCard = ({
         
         <div className="mt-8">
           <Button 
-            className={`w-full group ${isPrimary 
-              ? "bg-white text-[#7E69AB] hover:bg-gray-100" 
-              : "bg-[#9b87f5] hover:bg-[#8B5CF6] text-white"}`}
+            className={`w-full group ${buttonColor}`}
           >
             Je me lance !
             <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
