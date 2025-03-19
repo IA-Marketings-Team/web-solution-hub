@@ -50,9 +50,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           </div>
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
-              <div className="aspect-[4/3] relative overflow-hidden">
-                {/* Stylized logo above the man's head */}
-                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-3 shadow-lg">
+              <div className="relative">
+                {/* Stylized logo in center */}
+                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-3 shadow-lg">
                   <div className="w-14 h-14 flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-10 h-10">
                       <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1E40AF"/>
@@ -62,12 +62,44 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   </div>
                 </div>
                 
-                {/* Photo of a smiling man with glasses */}
-                <img 
-                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952" 
-                  alt="Homme souriant avec des lunettes" 
-                  className="w-full h-full object-cover"
-                />
+                {/* Professional images */}
+                <div className="grid grid-cols-3">
+                  {/* Developer */}
+                  <div className="aspect-[3/4] relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                      alt="Développeur informatique" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 w-full bg-darkblue-800/80 text-white text-xs py-1 text-center">
+                      Développeur
+                    </div>
+                  </div>
+                  
+                  {/* Construction Architect */}
+                  <div className="aspect-[3/4] relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+                      alt="Architecte BTP" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 w-full bg-darkblue-800/80 text-white text-xs py-1 text-center">
+                      Architecte BTP
+                    </div>
+                  </div>
+                  
+                  {/* Call Center Agent */}
+                  <div className="aspect-[3/4] relative overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1543269865-cbf427effbad" 
+                      alt="Agent de centre d'appel" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-0 w-full bg-darkblue-800/80 text-white text-xs py-1 text-center">
+                      Call Center
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             {/* Decorative Elements */}
