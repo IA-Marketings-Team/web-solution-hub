@@ -30,7 +30,7 @@ const Navigation = () => {
     { name: 'Vous êtes', path: '/vous-etes' },
     { name: 'Nos tarifs', path: '/pricing' },
     { name: 'Nos références', path: '/references' },
-    { name: 'i-numera et vous', path: '/about' },
+    { name: 'i-numera et vous', path: '/contact' },
   ];
 
   return (
