@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -78,7 +77,7 @@ const PricingTabContent: React.FC<PricingTabContentProps> = ({ plans }) => {
             </div>
             <p className="text-darkblue-700 mb-4 flex-grow">{plan.description}</p>
             <div className="flex items-baseline mb-6">
-              <span className="text-3xl font-bold text-darkblue-900">{plan.price}</span>
+              <span className="text-3xl font-bold text-darkblue-900">0€</span>
               <span className="text-darkblue-600 ml-2">HT/mois</span>
             </div>
 
@@ -169,7 +168,7 @@ const Pricing = () => {
       {
         name: "Site Vitrine",
         description: "Idéal pour présenter votre activité et vos services avec un site simple et efficace.",
-        price: "À partir de 60€",
+        price: "0€",
         features: [
           "5 pages personnalisées",
           "Design responsive",
@@ -183,7 +182,7 @@ const Pricing = () => {
       {
         name: "Site Catalogue",
         description: "Présentez tous vos produits et services de manière détaillée et attractive.",
-        price: "À partir de 80€",
+        price: "0€",
         features: [
           "10 pages personnalisées",
           "Catalogue produits illimité",
@@ -198,7 +197,7 @@ const Pricing = () => {
       {
         name: "Site E-commerce",
         description: "Vendez vos produits en ligne avec une boutique professionnelle et sécurisée.",
-        price: "À partir de 120€",
+        price: "0€",
         features: [
           "Boutique complète",
           "Panier d'achat sécurisé",
@@ -214,7 +213,7 @@ const Pricing = () => {
       {
         name: "SEO Essentiel",
         description: "Les bases pour améliorer votre visibilité sur les moteurs de recherche.",
-        price: "À partir de 175€",
+        price: "0€",
         features: [
           "Audit technique initial",
           "Optimisation on-page",
@@ -228,7 +227,7 @@ const Pricing = () => {
       {
         name: "SEO Premium",
         description: "Une stratégie complète pour dominer les résultats de recherche dans votre secteur.",
-        price: "À partir de 350€",
+        price: "0€",
         features: [
           "Audit technique approfondi",
           "Optimisation on-page et off-page",
@@ -243,7 +242,7 @@ const Pricing = () => {
       {
         name: "Google Ads",
         description: "Obtenez des résultats immédiats avec des campagnes publicitaires ciblées.",
-        price: "À partir de 150€",
+        price: "0€",
         features: [
           "Configuration de compte",
           "Création de campagnes",
@@ -259,7 +258,7 @@ const Pricing = () => {
       {
         name: "Gestion Basique",
         description: "Maintenez une présence régulière sur les réseaux sociaux principaux.",
-        price: "À partir de 200€",
+        price: "0€",
         features: [
           "2 plateformes",
           "8 publications par mois",
@@ -273,7 +272,7 @@ const Pricing = () => {
       {
         name: "Gestion Avancée",
         description: "Développez votre communauté avec une stratégie de contenu complète.",
-        price: "À partir de 400€",
+        price: "0€",
         features: [
           "4 plateformes",
           "16 publications par mois",
@@ -288,7 +287,7 @@ const Pricing = () => {
       {
         name: "Publicité Social Media",
         description: "Amplifiez votre portée avec des campagnes publicitaires ciblées.",
-        price: "À partir de 250€",
+        price: "0€",
         features: [
           "2 plateformes",
           "Création des visuels",
@@ -304,7 +303,7 @@ const Pricing = () => {
       {
         name: "Pack Photo",
         description: "Des photos professionnelles pour valoriser votre activité.",
-        price: "Sur devis",
+        price: "0€",
         features: [
           "Shooting professionnel",
           "Retouche photo",
@@ -318,7 +317,7 @@ const Pricing = () => {
       {
         name: "Pack Vidéo",
         description: "Des vidéos impactantes pour présenter votre entreprise et vos produits.",
-        price: "Sur devis",
+        price: "0€",
         features: [
           "Tournage professionnel",
           "Montage et post-production",
@@ -333,7 +332,7 @@ const Pricing = () => {
       {
         name: "Pack Complet",
         description: "Une solution complète avec photos et vidéos pour tous vos besoins.",
-        price: "Sur devis",
+        price: "0€",
         features: [
           "Shooting photo complet",
           "Vidéo promotionnelle",

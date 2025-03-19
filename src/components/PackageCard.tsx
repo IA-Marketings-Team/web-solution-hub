@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import PackageFeatureItem from './PackageFeatureItem';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export interface PackageCardProps {
   type: string;
@@ -39,6 +39,14 @@ const PackageCard = ({
     ? "bg-white text-darkblue-700 hover:bg-gray-100" 
     : "bg-red-500 hover:bg-red-600 text-white";
   
+  const accordionTriggerColor = isPrimary 
+    ? "text-white hover:text-white/90" 
+    : "text-darkblue-900 hover:text-darkblue-700";
+  
+  const accordionBorderColor = isPrimary 
+    ? "border-white/20" 
+    : "border-gray-200";
+  
   return (
     <Card className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${bgColor}`}>
       {/* Card header */}
@@ -65,13 +73,31 @@ const PackageCard = ({
         </div>
       </div>
       
-      {/* Card content */}
+      {/* Card content with accordion */}
       <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"}`}>
-        <div className="space-y-2">
-          {features.map((feature, index) => (
-            <PackageFeatureItem key={index} isPrimary={isPrimary}>{feature}</PackageFeatureItem>
-          ))}
-        </div>
+        <Accordion type="single" collapsible className="w-full">
+          {features.map((feature, index) => {
+            // Split the feature into title and description at the first colon
+            const parts = feature.split(': ');
+            const title = parts[0];
+            const description = parts.length > 1 ? parts[1] : '';
+            
+            return (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className={accordionBorderColor}
+              >
+                <AccordionTrigger className={accordionTriggerColor}>
+                  {title}
+                </AccordionTrigger>
+                <AccordionContent className={mutedTextColor}>
+                  {description}
+                </AccordionContent>
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
         
         <div className="mt-8">
           <Button 
