@@ -53,11 +53,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               <div className="aspect-[4/3] relative overflow-hidden">
                 {/* i-numera logo above the woman's head */}
                 <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-3 shadow-lg">
-                  <div className="w-16 h-16 flex items-center justify-center"> {/* Increased from w-14 h-14 to w-16 h-16 */}
+                  <div className="w-16 h-16 flex items-center justify-center">
                     <img 
                       src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
                       alt="i-numera logo" 
-                      className="w-14 h-auto" {/* Increased from w-12 to w-14 */}
+                      className="w-14 h-auto"
                     />
                   </div>
                 </div>
