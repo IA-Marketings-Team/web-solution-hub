@@ -29,7 +29,7 @@ const References = () => {
             Nos Références
           </h1>
           <p className="text-lg text-darkblue-700/80 mb-12">
-            i-numeria accompagne près de 20 000 entrepreneurs, artisans et TPE dans 150 secteurs d'activités différents.
+            i-numera accompagne près de 20 000 entrepreneurs, artisans et TPE dans 150 secteurs d'activités différents.
           </p>
         </motion.div>
 
@@ -46,7 +46,7 @@ const References = () => {
             </div>
           </div>
           <h2 className="text-xl md:text-2xl font-semibold text-darkblue-900 mb-2">
-            Professionnels de la construction, de la beauté, de la restauration, etc.,<br />ils font confiance à i-numeria
+            Professionnels de la construction, de la beauté, de la restauration, etc.,<br />ils font confiance à i-numera
           </h2>
         </motion.div>
 

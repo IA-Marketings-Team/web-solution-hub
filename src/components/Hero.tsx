@@ -51,13 +51,13 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                {/* i-numeria logo above the woman's head */}
+                {/* i-numera logo above the woman's head */}
                 <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-3 shadow-lg">
-                  <div className="w-14 h-14 flex items-center justify-center">
+                  <div className="w-16 h-16 flex items-center justify-center"> {/* Increased from w-14 h-14 to w-16 h-16 */}
                     <img 
                       src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
-                      alt="i-numeria logo" 
-                      className="w-12 h-auto"
+                      alt="i-numera logo" 
+                      className="w-14 h-auto" {/* Increased from w-12 to w-14 */}
                     />
                   </div>
                 </div>

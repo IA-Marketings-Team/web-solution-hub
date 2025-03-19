@@ -26,8 +26,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <div className="flex items-center space-x-2 mb-6">
               <img 
                 src="/lovable-uploads/9b43df0e-0943-4c2f-9433-cce569989739.png" 
-                alt="i-numeria logo" 
-                className="h-12 w-auto"
+                alt="i-numera logo" 
+                className="h-14 w-auto" // Increased from h-12 to h-14
               />
             </div>
             <p className="text-white/80 mb-6">
@@ -118,7 +118,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                   className="text-white/80 hover:text-white transition-colors hover-slide-right inline-flex items-center group"
                 >
                   <ArrowRight size={14} className="mr-2 transition-transform group-hover:translate-x-1" />
-                  i-numeria et vous
+                  i-numera et vous
                 </Link>
               </li>
             </ul>
@@ -179,10 +179,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li className="flex items-center">
                 <Mail size={18} className="text-red-500 mr-3 flex-shrink-0" />
                 <a 
-                  href="mailto:contact@i-numeria.com" 
+                  href="mailto:contact@i-numera.com" 
                   className="text-white/80 hover:text-white transition-colors"
                 >
-                  contact@i-numeria.com
+                  contact@i-numera.com
                 </a>
               </li>
               <li className="flex items-center">
@@ -201,7 +201,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <div className="pt-8 border-t border-darkblue-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/60 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} i-numeria. Tous droits réservés.
+              © {new Date().getFullYear()} i-numera. Tous droits réservés.
             </p>
             <div className="flex flex-wrap items-center gap-4 text-sm text-white/60">
               <Link 

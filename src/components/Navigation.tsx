@@ -30,7 +30,7 @@ const Navigation = () => {
     { name: 'Vous êtes', path: '/vous-etes' },
     { name: 'Nos tarifs', path: '/pricing' },
     { name: 'Nos références', path: '/references' },
-    { name: 'i-numeria et vous', path: '/about' },
+    { name: 'i-numera et vous', path: '/about' },
   ];
 
   return (
@@ -49,8 +49,8 @@ const Navigation = () => {
         >
           <img 
             src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
-            alt="i-numeria logo" 
-            className="h-10 w-auto"
+            alt="i-numera logo" 
+            className="h-12 w-auto" // Increased from h-10 to h-12
           />
         </Link>
 
@@ -113,8 +113,8 @@ const Navigation = () => {
               >
                 <img 
                   src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
-                  alt="i-numeria logo" 
-                  className="h-10 w-auto"
+                  alt="i-numera logo" 
+                  className="h-12 w-auto" // Increased from h-10 to h-12
                 />
               </Link>
               <button 
