@@ -77,20 +77,22 @@ const BlogPostCard = ({ post }: { post: any }) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all hover:shadow-xl">
       <div className="relative h-48 overflow-hidden">
-        {post.image ? (
-          <img 
-            src={post.image} 
-            alt={post.title} 
-            className="w-full h-full object-cover transition-transform hover:scale-105"
-          />
-        ) : (
-          <Skeleton className="w-full h-full" />
-        )}
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 bg-red-600 text-white text-xs uppercase font-medium rounded-full">
-            {post.category}
-          </span>
-        </div>
+        <Link to={`/blog/${post.slug}`}>
+          {post.image ? (
+            <img 
+              src={post.image} 
+              alt={post.title} 
+              className="w-full h-full object-cover transition-transform hover:scale-105"
+            />
+          ) : (
+            <Skeleton className="w-full h-full" />
+          )}
+          <div className="absolute top-4 left-4">
+            <span className="px-3 py-1 bg-red-600 text-white text-xs uppercase font-medium rounded-full">
+              {post.category}
+            </span>
+          </div>
+        </Link>
       </div>
       <div className="p-6">
         <div className="flex items-center text-sm text-gray-500 mb-3">
@@ -98,7 +100,11 @@ const BlogPostCard = ({ post }: { post: any }) => {
           <span className="mx-2">•</span>
           <span>{post.readTime} min de lecture</span>
         </div>
-        <h3 className="text-xl font-bold mb-3 text-darkblue-900">{post.title}</h3>
+        <h3 className="text-xl font-bold mb-3 text-darkblue-900">
+          <Link to={`/blog/${post.slug}`} className="hover:text-darkblue-600 transition-colors">
+            {post.title}
+          </Link>
+        </h3>
         <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
         <Link 
           to={`/blog/${post.slug}`} 
