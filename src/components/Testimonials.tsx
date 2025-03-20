@@ -117,7 +117,7 @@ const Testimonials = () => {
     threshold: 0.1,
   });
 
-  // Double the testimonials for continuous scrolling effect
+  // Triple the testimonials for continuous scrolling effect
   const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   return (
@@ -153,7 +153,7 @@ const Testimonials = () => {
                   display: 'flex',
                   flexDirection: 'row',
                   width: 'max-content',
-                  animation: 'marquee-horizontal 8s linear infinite', // Faster animation (was 15s)
+                  animation: 'marquee-horizontal 5s linear infinite', // Faster animation (was 8s)
                   willChange: 'transform',
                   animationPlayState: 'running',
                 }}
