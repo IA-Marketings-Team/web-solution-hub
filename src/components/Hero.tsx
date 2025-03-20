@@ -51,12 +51,12 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                {/* Logo positioning with better visibility - no circle */}
-                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10">
+                {/* Logo positioned on the left side with larger size */}
+                <div className="absolute top-6 left-8 z-10">
                   <img 
                     src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
                     alt="i-numera logo" 
-                    className="w-40 h-auto drop-shadow-lg" 
+                    className="w-56 h-auto drop-shadow-lg" 
                   />
                 </div>
                 
