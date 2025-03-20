@@ -52,11 +52,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
                 {/* Only the new logo in center */}
-                <div className="absolute inset-0 flex items-center justify-center z-10 mt-20">
+                <div className="absolute inset-0 flex items-center justify-center z-10">
                   <img 
                     src="/lovable-uploads/b3c33571-dd4d-4269-a516-f847893fdd7f.png" 
                     alt="i-numera logo" 
-                    className="w-[900px] h-auto drop-shadow-lg" 
+                    className="w-[1200px] h-auto drop-shadow-lg" 
                   />
                 </div>
                 
