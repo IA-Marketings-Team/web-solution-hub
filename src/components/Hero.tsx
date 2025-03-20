@@ -61,9 +61,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center z-10">
                   <img 
-                    src="/lovable-uploads/cd3f8bcb-8778-449d-a5d2-e873aeedbd9c.png" 
+                    src="/lovable-uploads/b3c33571-dd4d-4269-a516-f847893fdd7f.png" 
                     alt="i-numera new logo" 
-                    className="w-80 h-auto drop-shadow-lg" 
+                    className="w-96 h-auto drop-shadow-lg" 
                   />
                 </div>
                 
