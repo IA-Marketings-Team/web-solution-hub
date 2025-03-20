@@ -150,7 +150,7 @@ const Testimonials = () => {
               <div 
                 className="animate-marquee-horizontal flex"
                 style={{ 
-                  animationDuration: '30s',
+                  animationDuration: '15s', // Much faster animation (was 30s)
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.animationPlayState = 'paused';
