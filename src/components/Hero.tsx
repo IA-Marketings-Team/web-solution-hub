@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   <img 
                     src="/lovable-uploads/b3c33571-dd4d-4269-a516-f847893fdd7f.png" 
                     alt="i-numera logo" 
-                    className="w-[1200px] h-auto drop-shadow-lg" 
+                    className="w-[1500px] max-w-[95%] h-auto drop-shadow-lg transform scale-110" 
                   />
                 </div>
                 
