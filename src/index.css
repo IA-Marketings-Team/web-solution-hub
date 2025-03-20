@@ -88,6 +88,12 @@
     flex-direction: column;
     width: 100%;
   }
+  
+  .horizontal-scroll {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+  }
 }
 
 /* Custom styles */

@@ -72,13 +72,15 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
     <div 
       ref={ref}
       className={cn(
-        "flex flex-col h-full bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover-lift transition-all mb-6",
+        "flex flex-col h-full bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover-lift transition-all mr-6",
         inView ? "opacity-100" : "opacity-0 translate-y-8"
       )}
       style={{ 
         transitionProperty: 'all', 
         transitionDuration: '700ms', 
-        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' 
+        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        minWidth: '300px',
+        maxWidth: '350px'
       }}
     >
       <div className="flex items-center space-x-1 mb-2">
@@ -116,7 +118,7 @@ const Testimonials = () => {
   });
 
   // Double the testimonials for continuous scrolling effect
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   return (
     <section className="py-20">
@@ -142,20 +144,12 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative max-w-7xl mx-auto flex overflow-hidden" style={{ height: "600px" }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 absolute w-full">
-            <div className="flex flex-col h-full overflow-hidden">
-              <div className="vertical-scroll w-full animate-marquee-vertical">
-                {duplicatedTestimonials.slice(0, testimonials.length + 2).map((testimonial) => (
-                  <TestimonialCard key={`scroll1-${testimonial.id}`} testimonial={testimonial} />
-                ))}
-              </div>
-            </div>
-            
-            <div className="hidden lg:flex lg:flex-col h-full overflow-hidden">
-              <div className="vertical-scroll w-full animate-marquee-vertical-delayed">
-                {duplicatedTestimonials.slice(testimonials.length - 2).map((testimonial) => (
-                  <TestimonialCard key={`scroll2-${testimonial.id}`} testimonial={testimonial} />
+        <div className="relative max-w-7xl mx-auto overflow-hidden" style={{ height: "350px" }}>
+          <div className="absolute w-full">
+            <div className="flex overflow-hidden">
+              <div className="horizontal-scroll animate-marquee-horizontal">
+                {duplicatedTestimonials.map((testimonial, index) => (
+                  <TestimonialCard key={`scroll1-${testimonial.id}-${index}`} testimonial={testimonial} />
                 ))}
               </div>
             </div>

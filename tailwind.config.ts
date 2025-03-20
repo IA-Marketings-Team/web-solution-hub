@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -123,6 +122,10 @@ export default {
                 'marquee-vertical': {
                     '0%': { transform: 'translateY(0)' },
                     '100%': { transform: 'translateY(-50%)' }
+                },
+                'marquee-horizontal': {
+                    '0%': { transform: 'translateX(0)' },
+                    '100%': { transform: 'translateX(-50%)' }
                 }
 			},
 			animation: {
@@ -134,7 +137,8 @@ export default {
                 'scale-in': 'scale-in 0.5s ease-out forwards',
                 'float': 'float 3s ease-in-out infinite',
                 'marquee-vertical': 'marquee-vertical 25s linear infinite',
-                'marquee-vertical-delayed': 'marquee-vertical 25s linear infinite 12.5s'
+                'marquee-vertical-delayed': 'marquee-vertical 25s linear infinite 12.5s',
+                'marquee-horizontal': 'marquee-horizontal 15s linear infinite'
 			},
             fontFamily: {
                 sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
