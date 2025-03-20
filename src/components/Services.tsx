@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { 
@@ -6,11 +5,7 @@ import {
   BarChart3, 
   Search, 
   MapPin, 
-  Users, 
-  Camera, 
-  Star, 
-  Award, 
-  Bookmark 
+  Users
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import ServiceCard from './ServiceCard';
@@ -52,12 +47,6 @@ const Services = () => {
       title: "Community Management",
       description: "Engagez votre audience sur les réseaux sociaux avec notre service de gestion de communauté.",
       delay: 500
-    },
-    {
-      icon: <Camera size={24} />,
-      title: "Photos et Vidéos",
-      description: "Mettez en valeur votre activité avec nos services de création de contenu visuel professionnel.",
-      delay: 600
     }
   ];
 
