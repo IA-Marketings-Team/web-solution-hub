@@ -29,7 +29,7 @@ interface ExpertiseCardProps {
   delay: number;
 }
 
-const ExpertiseCard = ({ icon, title, description, features, price, delay }: ExpertiseCardProps) => {
+const ExpertiseCard = ({ icon, title, description, features, delay }: ExpertiseCardProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -70,7 +70,7 @@ const ExpertiseCard = ({ icon, title, description, features, price, delay }: Exp
       </div>
       <div className="p-6 bg-gray-50 mt-auto">
         <div className="flex items-baseline mb-4">
-          <span className="text-3xl font-bold text-darkblue-900">{price}</span>
+          <span className="text-3xl font-bold text-darkblue-900">0</span>
           <span className="text-sm text-darkblue-700 ml-2">HT/mois</span>
         </div>
         <Link
@@ -108,7 +108,7 @@ const Expertise = () => {
         "Sécurisé et performant",
         "Adapté à tous les appareils"
       ],
-      price: "À partir de 60€",
+      price: "0",
       delay: 100
     },
     {
@@ -122,7 +122,7 @@ const Expertise = () => {
         "Suivi des positions",
         "Rapports mensuels détaillés"
       ],
-      price: "À partir de 175€",
+      price: "0",
       delay: 200
     },
     {
@@ -136,7 +136,7 @@ const Expertise = () => {
         "Mise à jour des informations",
         "Suivi des statistiques"
       ],
-      price: "À partir de 50€",
+      price: "0",
       delay: 300
     },
     {
@@ -150,7 +150,7 @@ const Expertise = () => {
         "Présence sur les plateformes d'avis",
         "Rapports trimestriels"
       ],
-      price: "À partir de 250€",
+      price: "0",
       delay: 400
     },
     {
@@ -164,7 +164,7 @@ const Expertise = () => {
         "Analyse des performances",
         "Veille concurrentielle"
       ],
-      price: "À partir de 200€",
+      price: "0",
       delay: 500
     },
     {
@@ -178,7 +178,7 @@ const Expertise = () => {
         "Visite virtuelle 360°",
         "Optimisation pour le web"
       ],
-      price: "Sur devis",
+      price: "0",
       delay: 600
     },
     {
@@ -192,7 +192,7 @@ const Expertise = () => {
         "Maintenance et mises à jour",
         "Analyses et statistiques"
       ],
-      price: "Sur devis",
+      price: "0",
       delay: 700
     },
     {
@@ -206,7 +206,7 @@ const Expertise = () => {
         "Expédition et logistique",
         "Tableau de bord détaillé"
       ],
-      price: "À partir de 100€",
+      price: "0",
       delay: 800
     },
     {
@@ -220,7 +220,7 @@ const Expertise = () => {
         "Analyse des performances",
         "A/B testing"
       ],
-      price: "À partir de 80€",
+      price: "0",
       delay: 900
     }
   ];
