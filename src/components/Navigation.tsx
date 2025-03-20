@@ -39,7 +39,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Nos expertises', path: '/expertise' },
     { name: 'Vous êtes', path: '/vous-etes' },
-    { name: 'Nos tarifs', path: '/pricing' },
+    { name: 'Nos offres', path: '/pricing' },
     { name: 'Nos références', path: '/references' },
     { name: 'Blog', path: '/blog' },
     { name: 'i-numera et vous', path: '/contact' },

@@ -32,7 +32,7 @@ const QuickLinks: React.FC = () => {
             className="text-darkblue-700 hover:text-darkblue-900 transition-colors hover-slide-right inline-flex items-center group"
           >
             <ArrowRight size={14} className="mr-2 transition-transform group-hover:translate-x-1" />
-            Nos tarifs
+            Nos offres
           </Link>
         </li>
         <li>
