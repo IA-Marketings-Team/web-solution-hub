@@ -72,14 +72,14 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
     <div 
       ref={ref}
       className={cn(
-        "flex flex-col h-full bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover-lift transition-all mr-6",
+        "flex flex-col bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover-lift transition-all mb-6",
         inView ? "opacity-100" : "opacity-0 translate-y-8"
       )}
       style={{ 
         transitionProperty: 'all', 
         transitionDuration: '700ms', 
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-        minWidth: '300px',
+        width: '100%',
         maxWidth: '350px'
       }}
     >
@@ -117,7 +117,7 @@ const Testimonials = () => {
     threshold: 0.1,
   });
 
-  // Double the testimonials for continuous scrolling effect
+  // Triple the testimonials for continuous scrolling effect
   const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   return (
@@ -144,32 +144,57 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative max-w-7xl mx-auto overflow-hidden" style={{ height: "350px" }}>
-          <div className="absolute w-full">
-            <div className="flex overflow-hidden">
-              <div 
-                className="horizontal-scroll"
-                style={{ 
-                  display: 'flex',
-                  flexDirection: 'row',
-                  width: 'max-content',
-                  animation: 'marquee-horizontal 8s linear infinite', // Faster animation (was 15s)
-                  willChange: 'transform',
-                  animationPlayState: 'running',
-                }}
-                onMouseEnter={(e) => {
-                  // Pause the animation on hover
-                  e.currentTarget.style.animationPlayState = 'paused';
-                }}
-                onMouseLeave={(e) => {
-                  // Resume the animation when mouse leaves
-                  e.currentTarget.style.animationPlayState = 'running';
-                }}
-              >
-                {duplicatedTestimonials.map((testimonial, index) => (
-                  <TestimonialCard key={`scroll1-${testimonial.id}-${index}`} testimonial={testimonial} />
-                ))}
-              </div>
+        <div className="grid md:grid-cols-2 gap-4 relative max-w-7xl mx-auto">
+          {/* First column - continuously scrolling down */}
+          <div className="relative overflow-hidden" style={{ height: "500px" }}>
+            <div 
+              className="vertical-scroll"
+              style={{ 
+                animationDuration: '15s',
+                animationTimingFunction: 'linear',
+                animationIterationCount: 'infinite',
+                animationName: 'marquee-vertical',
+                animationPlayState: 'running',
+              }}
+              onMouseEnter={(e) => {
+                // Pause the animation on hover
+                e.currentTarget.style.animationPlayState = 'paused';
+              }}
+              onMouseLeave={(e) => {
+                // Resume the animation when mouse leaves
+                e.currentTarget.style.animationPlayState = 'running';
+              }}
+            >
+              {duplicatedTestimonials.slice(0, 7).map((testimonial, index) => (
+                <TestimonialCard key={`col1-${testimonial.id}-${index}`} testimonial={testimonial} />
+              ))}
+            </div>
+          </div>
+          
+          {/* Second column - continuously scrolling down with delay */}
+          <div className="relative overflow-hidden" style={{ height: "500px" }}>
+            <div 
+              className="vertical-scroll"
+              style={{ 
+                animationDuration: '18s', // Slightly slower for visual interest
+                animationTimingFunction: 'linear',
+                animationIterationCount: 'infinite',
+                animationName: 'marquee-vertical',
+                animationPlayState: 'running',
+                animationDelay: '750ms', // Staggered start
+              }}
+              onMouseEnter={(e) => {
+                // Pause the animation on hover
+                e.currentTarget.style.animationPlayState = 'paused';
+              }}
+              onMouseLeave={(e) => {
+                // Resume the animation when mouse leaves
+                e.currentTarget.style.animationPlayState = 'running';
+              }}
+            >
+              {duplicatedTestimonials.slice(5, 12).map((testimonial, index) => (
+                <TestimonialCard key={`col2-${testimonial.id}-${index}`} testimonial={testimonial} />
+              ))}
             </div>
           </div>
         </div>
