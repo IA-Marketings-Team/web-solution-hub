@@ -51,18 +51,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                {/* Both logos - previous logo positioned to the left and new logo in center */}
-                <div className="absolute top-16 left-6 z-10">
-                  <img 
-                    src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
-                    alt="i-numera previous logo" 
-                    className="w-56 h-auto drop-shadow-lg" 
-                  />
-                </div>
+                {/* Only the new logo in center */}
                 <div className="absolute inset-0 flex items-center justify-center z-10 mt-20">
                   <img 
                     src="/lovable-uploads/b3c33571-dd4d-4269-a516-f847893fdd7f.png" 
-                    alt="i-numera new logo" 
+                    alt="i-numera logo" 
                     className="w-[900px] h-auto drop-shadow-lg" 
                   />
                 </div>
