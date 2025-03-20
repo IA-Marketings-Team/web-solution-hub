@@ -1,14 +1,8 @@
+
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
 
 interface Testimonial {
   id: number;
@@ -78,7 +72,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
     <div 
       ref={ref}
       className={cn(
-        "flex flex-col h-full bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover-lift transition-all min-w-[300px] md:min-w-[350px]",
+        "flex flex-col h-full bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover-lift transition-all mb-6",
         inView ? "opacity-100" : "opacity-0 translate-y-8"
       )}
       style={{ 
@@ -121,6 +115,9 @@ const Testimonials = () => {
     threshold: 0.1,
   });
 
+  // Double the testimonials for continuous scrolling effect
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
   return (
     <section className="py-20">
       <div className="container px-4 md:px-6">
@@ -145,31 +142,24 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative max-w-7xl mx-auto">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-              dragFree: true,
-              containScroll: false,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {testimonials.map((testimonial) => (
-                <CarouselItem 
-                  key={testimonial.id} 
-                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
-                >
-                  <TestimonialCard testimonial={testimonial} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center mt-8 gap-4">
-              <CarouselPrevious className="static transform-none mx-2" />
-              <CarouselNext className="static transform-none mx-2" />
+        <div className="relative max-w-7xl mx-auto flex overflow-hidden" style={{ height: "600px" }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 absolute w-full">
+            <div className="flex flex-col h-full overflow-hidden">
+              <div className="vertical-scroll w-full animate-marquee-vertical">
+                {duplicatedTestimonials.slice(0, testimonials.length + 2).map((testimonial) => (
+                  <TestimonialCard key={`scroll1-${testimonial.id}`} testimonial={testimonial} />
+                ))}
+              </div>
             </div>
-          </Carousel>
+            
+            <div className="hidden lg:flex lg:flex-col h-full overflow-hidden">
+              <div className="vertical-scroll w-full animate-marquee-vertical-delayed">
+                {duplicatedTestimonials.slice(testimonials.length - 2).map((testimonial) => (
+                  <TestimonialCard key={`scroll2-${testimonial.id}`} testimonial={testimonial} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

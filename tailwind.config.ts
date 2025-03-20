@@ -119,6 +119,10 @@ export default {
                 'float': {
                     '0%, 100%': { transform: 'translateY(0)' },
                     '50%': { transform: 'translateY(-5px)' }
+                },
+                'marquee-vertical': {
+                    '0%': { transform: 'translateY(0)' },
+                    '100%': { transform: 'translateY(-50%)' }
                 }
 			},
 			animation: {
@@ -128,7 +132,9 @@ export default {
                 'fade-in-right': 'fade-in-right 0.7s ease-out forwards',
                 'fade-in-left': 'fade-in-left 0.7s ease-out forwards',
                 'scale-in': 'scale-in 0.5s ease-out forwards',
-                'float': 'float 3s ease-in-out infinite'
+                'float': 'float 3s ease-in-out infinite',
+                'marquee-vertical': 'marquee-vertical 25s linear infinite',
+                'marquee-vertical-delayed': 'marquee-vertical 25s linear infinite 12.5s'
 			},
             fontFamily: {
                 sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
