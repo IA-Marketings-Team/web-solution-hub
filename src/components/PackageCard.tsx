@@ -19,8 +19,6 @@ export interface PackageCardProps {
 const PackageCard = ({ 
   type,
   title,
-  price,
-  setupFee,
   features,
   image,
   isPrimary = false,
@@ -61,16 +59,6 @@ const PackageCard = ({
         </div>
         
         <h3 className={`text-2xl font-bold ${textColor} mb-6`}>{title}</h3>
-        
-        <div className="mb-5">
-          <div className={`text-sm ${mutedTextColor}`}>à partir de</div>
-          <div className={`text-3xl font-bold ${textColor} flex items-end`}>
-            {price}€ <span className="text-base font-normal ml-1 mb-1">HT/mois</span>
-          </div>
-          <div className={`text-sm ${mutedTextColor}`}>
-            {setupFee}€ ht de Frais de création
-          </div>
-        </div>
       </div>
       
       {/* Card content with accordion */}

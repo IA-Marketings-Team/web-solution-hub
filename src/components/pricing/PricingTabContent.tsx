@@ -64,10 +64,6 @@ const PricingTabContent: React.FC<PricingTabContentProps> = ({ plans }) => {
               <h3 className="text-xl font-bold text-darkblue-900">{plan.name}</h3>
             </div>
             <p className="text-darkblue-700 mb-4 flex-grow">{plan.description}</p>
-            <div className="flex items-baseline mb-6">
-              <span className="text-3xl font-bold text-darkblue-900">0€</span>
-              <span className="text-darkblue-600 ml-2">HT/mois</span>
-            </div>
 
             <ul className="space-y-3 mb-6">
               {plan.features.map((feature, i) => (
