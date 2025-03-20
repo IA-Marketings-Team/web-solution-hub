@@ -94,6 +94,21 @@
     flex-direction: row;
     width: max-content;
   }
+
+  @keyframes marquee-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee-horizontal {
+    animation: marquee-horizontal linear infinite;
+    display: flex;
+    width: max-content;
+  }
 }
 
 /* Custom styles */

@@ -117,8 +117,8 @@ const Testimonials = () => {
     threshold: 0.1,
   });
 
-  // Quadruple the testimonials for continuous scrolling effect
-  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
+  // Multiply testimonials for continuous scrolling effect
+  const multipliedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
   return (
     <section className="py-20">
@@ -144,29 +144,22 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative max-w-7xl mx-auto overflow-hidden" style={{ height: "350px" }}>
+        <div className="relative w-full overflow-hidden" style={{ height: "400px" }}>
           <div className="absolute w-full">
             <div className="flex overflow-hidden">
               <div 
-                className="horizontal-scroll"
+                className="animate-marquee-horizontal flex"
                 style={{ 
-                  display: 'flex',
-                  flexDirection: 'row',
-                  width: 'max-content',
-                  animation: 'marquee-horizontal 3s linear infinite', // Even faster animation (was 5s)
-                  willChange: 'transform',
-                  animationPlayState: 'running',
+                  animationDuration: '30s',
                 }}
                 onMouseEnter={(e) => {
-                  // Pause the animation on hover
                   e.currentTarget.style.animationPlayState = 'paused';
                 }}
                 onMouseLeave={(e) => {
-                  // Resume the animation when mouse leaves
                   e.currentTarget.style.animationPlayState = 'running';
                 }}
               >
-                {duplicatedTestimonials.map((testimonial, index) => (
+                {multipliedTestimonials.map((testimonial, index) => (
                   <TestimonialCard key={`scroll1-${testimonial.id}-${index}`} testimonial={testimonial} />
                 ))}
               </div>

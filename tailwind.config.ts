@@ -125,7 +125,7 @@ export default {
                 },
                 'marquee-horizontal': {
                     '0%': { transform: 'translateX(0)' },
-                    '100%': { transform: 'translateX(-50%)' }
+                    '100%': { transform: 'translateX(-100%)' }
                 }
 			},
 			animation: {
@@ -138,7 +138,7 @@ export default {
                 'float': 'float 3s ease-in-out infinite',
                 'marquee-vertical': 'marquee-vertical 25s linear infinite',
                 'marquee-vertical-delayed': 'marquee-vertical 25s linear infinite 12.5s',
-                'marquee-horizontal': 'marquee-horizontal 3s linear infinite'
+                'marquee-horizontal': 'marquee-horizontal 30s linear infinite'
 			},
             fontFamily: {
                 sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
