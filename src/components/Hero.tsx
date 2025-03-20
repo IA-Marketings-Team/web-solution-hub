@@ -69,11 +69,11 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 
                 {/* Professional smiling woman image with increased white overlay for better logo visibility */}
                 <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-white/80 z-[5]"></div>
+                  <div className="absolute inset-0 bg-white/90 z-[5]"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
                     alt="Femme professionnelle souriante avec des lunettes" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-30"
                   />
                 </div>
               </div>
