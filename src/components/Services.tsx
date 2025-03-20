@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { 
@@ -63,9 +62,9 @@ const Services = () => {
 
   const keyMetrics = [
     { value: "5+", label: "Années d'expérience", delay: 200 },
-    { value: "50+", label: "Agences locales", delay: 300 },
-    { value: "20k+", label: "Sites web créés", delay: 400 },
-    { value: "96%", label: "Clients satisfaits", delay: 500 }
+    { value: "250+", label: "Projets réalisés", delay: 300 },
+    { value: "700+", label: "Sites web créés", delay: 400 },
+    { value: "20k+", label: "Clients satisfaits", delay: 500 }
   ];
 
   return (
