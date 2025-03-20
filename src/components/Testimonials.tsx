@@ -1,8 +1,14 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 interface Testimonial {
   id: number;
@@ -72,7 +78,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
     <div 
       ref={ref}
       className={cn(
-        "flex flex-col h-full bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover-lift transition-all",
+        "flex flex-col h-full bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover-lift transition-all min-w-[300px] md:min-w-[350px]",
         inView ? "opacity-100" : "opacity-0 translate-y-8"
       )}
       style={{ 
@@ -110,21 +116,10 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
 };
 
 const Testimonials = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const slideCount = Math.ceil(testimonials.length / 3);
-  
-  const nextSlide = () => {
-    setActiveSlide((prev) => (prev + 1) % slideCount);
-  };
-  
-  const prevSlide = () => {
-    setActiveSlide((prev) => (prev - 1 + slideCount) % slideCount);
-  };
 
   return (
     <section className="py-20">
@@ -150,56 +145,31 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="relative">
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${activeSlide * 100}%)` }}
-            >
-              {Array.from({ length: slideCount }).map((_, slideIndex) => (
-                <div key={slideIndex} className="min-w-full px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {testimonials
-                    .slice(slideIndex * 3, slideIndex * 3 + 3)
-                    .map((testimonial) => (
-                      <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-                    ))}
-                </div>
+        <div className="relative max-w-7xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+              dragFree: true,
+              containScroll: false,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {testimonials.map((testimonial) => (
+                <CarouselItem 
+                  key={testimonial.id} 
+                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                >
+                  <TestimonialCard testimonial={testimonial} />
+                </CarouselItem>
               ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-8 gap-4">
+              <CarouselPrevious className="static transform-none mx-2" />
+              <CarouselNext className="static transform-none mx-2" />
             </div>
-          </div>
-
-          {/* Navigation Controls */}
-          <div className="flex justify-center items-center mt-10 space-x-4">
-            <button
-              onClick={prevSlide}
-              className="p-2 rounded-full bg-darkblue-100 hover:bg-darkblue-200 text-darkblue-800 transition-colors duration-200"
-              aria-label="Previous testimonials"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <div className="flex space-x-2">
-              {Array.from({ length: slideCount }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveSlide(index)}
-                  className={cn(
-                    "w-3 h-3 rounded-full transition-colors duration-200",
-                    activeSlide === index 
-                      ? "bg-red-600" 
-                      : "bg-gray-300 hover:bg-gray-400"
-                  )}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={nextSlide}
-              className="p-2 rounded-full bg-darkblue-100 hover:bg-darkblue-200 text-darkblue-800 transition-colors duration-200"
-              aria-label="Next testimonials"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
+          </Carousel>
         </div>
       </div>
     </section>
