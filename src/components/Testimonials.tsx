@@ -147,7 +147,25 @@ const Testimonials = () => {
         <div className="relative max-w-7xl mx-auto overflow-hidden" style={{ height: "350px" }}>
           <div className="absolute w-full">
             <div className="flex overflow-hidden">
-              <div className="horizontal-scroll animate-marquee-horizontal">
+              <div 
+                className="horizontal-scroll"
+                style={{ 
+                  display: 'flex',
+                  flexDirection: 'row',
+                  width: 'max-content',
+                  animation: 'marquee-horizontal 8s linear infinite', // Faster animation (was 15s)
+                  willChange: 'transform',
+                  animationPlayState: 'running',
+                }}
+                onMouseEnter={(e) => {
+                  // Pause the animation on hover
+                  e.currentTarget.style.animationPlayState = 'paused';
+                }}
+                onMouseLeave={(e) => {
+                  // Resume the animation when mouse leaves
+                  e.currentTarget.style.animationPlayState = 'running';
+                }}
+              >
                 {duplicatedTestimonials.map((testimonial, index) => (
                   <TestimonialCard key={`scroll1-${testimonial.id}-${index}`} testimonial={testimonial} />
                 ))}
