@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -116,95 +116,9 @@ const Testimonials = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-  
-  const scrollRef = useRef<HTMLDivElement>(null);
-  
-  // Clone testimonials for a seamless infinite loop
-  const loopedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
-  useEffect(() => {
-    const handleInfiniteScroll = () => {
-      if (!scrollRef.current) return;
-      
-      const scrollContainer = scrollRef.current;
-      const containerWidth = scrollContainer.scrollWidth / 3;
-      
-      if (scrollContainer.scrollLeft >= containerWidth) {
-        // Reset to start position without animation when we reach the middle set
-        scrollContainer.style.scrollBehavior = 'auto';
-        scrollContainer.scrollLeft = 0;
-        setTimeout(() => {
-          scrollContainer.style.scrollBehavior = 'smooth';
-        }, 50);
-      } else if (scrollContainer.scrollLeft <= 0) {
-        // If scrolled back to beginning, jump to middle set
-        scrollContainer.style.scrollBehavior = 'auto';
-        scrollContainer.scrollLeft = containerWidth;
-        setTimeout(() => {
-          scrollContainer.style.scrollBehavior = 'smooth';
-        }, 50);
-      }
-    };
-    
-    const scrollContainer = scrollRef.current;
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleInfiniteScroll);
-      // Start with smooth scrolling
-      scrollContainer.style.scrollBehavior = 'smooth';
-      // Initial position at the middle set of testimonials
-      scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3;
-    }
-    
-    return () => {
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('scroll', handleInfiniteScroll);
-      }
-    };
-  }, []);
-
-  // Auto-scroll effect
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-    
-    const autoScroll = setInterval(() => {
-      if (scrollContainer.scrollLeft < scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-        scrollContainer.scrollLeft += 2; // Adjust speed as needed
-      }
-    }, 20); // Adjust interval for smoother or faster scrolling
-    
-    // Pause scrolling on hover
-    const handleMouseEnter = () => clearInterval(autoScroll);
-    const handleMouseLeave = () => {
-      clearInterval(autoScroll);
-      // Resume auto-scrolling when mouse leaves
-      const newAutoScroll = setInterval(() => {
-        if (scrollContainer.scrollLeft < scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-          scrollContainer.scrollLeft += 2;
-        }
-      }, 20);
-      
-      // Store the new interval ID for cleanup
-      scrollContainer.dataset.autoScrollId = String(newAutoScroll);
-    };
-    
-    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
-    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
-    
-    return () => {
-      clearInterval(autoScroll);
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
-        scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
-        
-        // Clear any auto-scroll that might be running
-        const storedIntervalId = scrollContainer.dataset.autoScrollId;
-        if (storedIntervalId) {
-          clearInterval(Number(storedIntervalId));
-        }
-      }
-    };
-  }, []);
+  // Multiply testimonials for continuous scrolling effect
+  const multipliedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
   return (
     <section className="py-20">
@@ -231,20 +145,25 @@ const Testimonials = () => {
         </div>
 
         <div className="relative w-full overflow-hidden" style={{ height: "400px" }}>
-          <div 
-            ref={scrollRef}
-            className="flex overflow-x-auto hide-scrollbar snap-x py-4"
-            style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
-              WebkitOverflowScrolling: 'touch',
-            }}
-          >
-            {loopedTestimonials.map((testimonial, index) => (
-              <div key={`testimonial-${testimonial.id}-${index}`} className="snap-center flex-shrink-0">
-                <TestimonialCard testimonial={testimonial} />
+          <div className="absolute w-full">
+            <div className="flex overflow-hidden">
+              <div 
+                className="animate-marquee-horizontal flex"
+                style={{ 
+                  animationDuration: '15s', // Much faster animation (was 30s)
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.animationPlayState = 'paused';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.animationPlayState = 'running';
+                }}
+              >
+                {multipliedTestimonials.map((testimonial, index) => (
+                  <TestimonialCard key={`scroll1-${testimonial.id}-${index}`} testimonial={testimonial} />
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
