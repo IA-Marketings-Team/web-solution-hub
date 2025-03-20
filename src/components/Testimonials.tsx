@@ -117,8 +117,8 @@ const Testimonials = () => {
     threshold: 0.1,
   });
 
-  // Triple the testimonials for continuous scrolling effect
-  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+  // Quadruple the testimonials for continuous scrolling effect
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
   return (
     <section className="py-20">
@@ -153,7 +153,7 @@ const Testimonials = () => {
                   display: 'flex',
                   flexDirection: 'row',
                   width: 'max-content',
-                  animation: 'marquee-horizontal 5s linear infinite', // Faster animation (was 8s)
+                  animation: 'marquee-horizontal 3s linear infinite', // Even faster animation (was 5s)
                   willChange: 'transform',
                   animationPlayState: 'running',
                 }}
