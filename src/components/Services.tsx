@@ -64,8 +64,7 @@ const Services = () => {
   const keyMetrics = [
     { value: "5+", label: "Années d'expérience", delay: 200 },
     { value: "250+", label: "Projets réalisés", delay: 300 },
-    { value: "700+", label: "Sites web créés", delay: 400 },
-    { value: "20k+", label: "Clients satisfaits", delay: 500 }
+    { value: "700+", label: "Sites web créés", delay: 400 }
   ];
 
   return (
@@ -107,7 +106,7 @@ const Services = () => {
 
         {/* Key Metrics */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 py-8 mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-3">
             {keyMetrics.map((metric, index) => (
               <KeyMetric
                 key={index}
