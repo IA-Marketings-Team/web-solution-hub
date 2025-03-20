@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                {/* i-numera logo above the woman's head */}
+                {/* i-numera logo above the person's head */}
                 <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-3 shadow-lg">
                   <div className="w-16 h-16 flex items-center justify-center">
                     <img 
@@ -62,10 +62,10 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   </div>
                 </div>
                 
-                {/* Photo of a different professional woman with glasses */}
+                {/* Modern photo of a smiling man with glasses */}
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
-                  alt="Femme professionnelle souriante avec des lunettes" 
+                  src="/lovable-uploads/f078db19-83ad-4660-9706-f4a64dbef869.png" 
+                  alt="Homme professionnel souriant avec des lunettes" 
                   className="w-full h-full object-cover"
                 />
               </div>
