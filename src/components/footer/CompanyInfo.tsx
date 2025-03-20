@@ -9,7 +9,7 @@ const CompanyInfo: React.FC = () => {
         <img 
           src="/lovable-uploads/9b43df0e-0943-4c2f-9433-cce569989739.png" 
           alt="i-numera logo" 
-          className="h-16 w-auto"
+          className="h-20 w-auto"
         />
       </div>
       <p className="text-darkblue-700 mb-6">
