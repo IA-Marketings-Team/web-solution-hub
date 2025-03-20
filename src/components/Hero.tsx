@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                {/* Logo positioning with semi-transparent background for better visibility - no circle */}
+                {/* Logo positioning with better visibility - no circle */}
                 <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10">
                   <img 
                     src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
@@ -60,9 +60,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                   />
                 </div>
                 
-                {/* Professional smiling woman image with white overlay for better logo visibility */}
+                {/* Professional smiling woman image with increased white overlay for better logo visibility */}
                 <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-white/30 z-[5]"></div>
+                  <div className="absolute inset-0 bg-white/60 z-[5]"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
                     alt="Femme professionnelle souriante avec des lunettes" 
