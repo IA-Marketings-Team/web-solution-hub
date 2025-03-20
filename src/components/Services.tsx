@@ -5,7 +5,10 @@ import {
   BarChart3, 
   Search, 
   MapPin, 
-  Users
+  Users,
+  Star,
+  Award,
+  Bookmark
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import ServiceCard from './ServiceCard';
@@ -80,7 +83,6 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {serviceCards.map((card, index) => (
             <ServiceCard
@@ -93,7 +95,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Key Metrics */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 py-8 mb-16">
           <div className="grid grid-cols-3">
             {keyMetrics.map((metric, index) => (
@@ -107,7 +108,6 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Partnerships */}
         <div 
           className={cn(
             "max-w-3xl mx-auto text-center",
