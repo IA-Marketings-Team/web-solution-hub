@@ -15,7 +15,6 @@ const PricingTabs = () => {
         {activeTab === "sites" && <PricingTabContent plans={pricingPlansData.sites} />}
         {activeTab === "seo" && <PricingTabContent plans={pricingPlansData.seo} />}
         {activeTab === "social" && <PricingTabContent plans={pricingPlansData.social} />}
-        {activeTab === "photo" && <PricingTabContent plans={pricingPlansData.photo} />}
       </div>
     </div>
   );

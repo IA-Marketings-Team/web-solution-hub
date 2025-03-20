@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Globe, Search, Users, Camera } from 'lucide-react';
+import { Globe, Search, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface PricingTabButtonsProps {
@@ -43,17 +43,6 @@ const PricingTabButtons: React.FC<PricingTabButtonsProps> = ({ activeTab, setAct
         )}
       >
         Community management
-      </button>
-      <button
-        onClick={() => setActiveTab("photo")}
-        className={cn(
-          "py-2 px-4 text-sm font-medium rounded-full transition-all",
-          activeTab === "photo" 
-            ? "bg-white shadow-sm text-darkblue-900" 
-            : "text-darkblue-700 hover:text-darkblue-900"
-        )}
-      >
-        Photos et vidéos
       </button>
     </div>
   );
