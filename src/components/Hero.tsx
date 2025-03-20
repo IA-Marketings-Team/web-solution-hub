@@ -51,19 +51,26 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                {/* i-numera logo positioned on top without constraining shape */}
-                <img 
-                  src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
-                  alt="i-numera logo" 
-                  className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 w-24 h-auto"
-                />
+                {/* Enhanced logo positioning with white background glow for better visibility */}
+                <div className="absolute top-6 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="w-28 h-28 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center">
+                    <img 
+                      src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
+                      alt="i-numera logo" 
+                      className="w-24 h-auto drop-shadow-md"
+                    />
+                  </div>
+                </div>
                 
-                {/* Professional smiling woman image */}
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
-                  alt="Femme professionnelle souriante avec des lunettes" 
-                  className="w-full h-full object-cover"
-                />
+                {/* Professional smiling woman image with reduced opacity overlay */}
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 bg-white/20 z-[5]"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
+                    alt="Femme professionnelle souriante avec des lunettes" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
             {/* Decorative Elements */}
