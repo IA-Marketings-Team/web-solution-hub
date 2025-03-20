@@ -16,7 +16,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ className }) => {
     <div className={`flex space-x-4 ${className}`}>
       <a 
         href="https://facebook.com" 
-        className="w-9 h-9 rounded-full bg-darkblue-800 hover:bg-darkblue-700 flex items-center justify-center transition-colors"
+        className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors text-darkblue-800"
         aria-label="Facebook"
         target="_blank"
         rel="noopener noreferrer"
@@ -25,7 +25,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ className }) => {
       </a>
       <a 
         href="https://twitter.com" 
-        className="w-9 h-9 rounded-full bg-darkblue-800 hover:bg-darkblue-700 flex items-center justify-center transition-colors"
+        className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors text-darkblue-800"
         aria-label="Twitter"
         target="_blank"
         rel="noopener noreferrer"
@@ -34,7 +34,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ className }) => {
       </a>
       <a 
         href="https://instagram.com" 
-        className="w-9 h-9 rounded-full bg-darkblue-800 hover:bg-darkblue-700 flex items-center justify-center transition-colors"
+        className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors text-darkblue-800"
         aria-label="Instagram"
         target="_blank"
         rel="noopener noreferrer"
@@ -43,7 +43,7 @@ const SocialIcons: React.FC<SocialIconsProps> = ({ className }) => {
       </a>
       <a 
         href="https://linkedin.com" 
-        className="w-9 h-9 rounded-full bg-darkblue-800 hover:bg-darkblue-700 flex items-center justify-center transition-colors"
+        className="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors text-darkblue-800"
         aria-label="LinkedIn"
         target="_blank"
         rel="noopener noreferrer"

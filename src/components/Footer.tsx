@@ -13,7 +13,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <footer className={cn("bg-darkblue-900 text-white pt-16 pb-8", className)}>
+    <footer className={cn("bg-white text-darkblue-900 pt-16 pb-8", className)}>
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <CompanyInfo />
@@ -22,9 +22,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <ContactInfo />
         </div>
 
-        <div className="pt-8 border-t border-darkblue-800">
+        <div className="pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white/60 text-sm mb-4 md:mb-0">
+            <p className="text-darkblue-700 text-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} i-numera. Tous droits réservés.
             </p>
             <LegalLinks />
