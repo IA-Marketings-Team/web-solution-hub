@@ -1,19 +1,25 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 import ExpertiseHeader from '@/components/expertise/ExpertiseHeader';
 import ExpertiseGrid from '@/components/expertise/ExpertiseGrid';
-import { expertiseCards } from '@/data/expertiseData';
+import ExpertiseFilter from '@/components/expertise/ExpertiseFilter';
+import { expertiseCards, ExpertiseCategory } from '@/data/expertiseData';
 
 const Expertise = () => {
   const location = useLocation();
+  const [selectedCategory, setSelectedCategory] = useState<ExpertiseCategory>('all');
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  const handleCategoryChange = (category: ExpertiseCategory) => {
+    setSelectedCategory(category);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -26,7 +32,15 @@ const Expertise = () => {
               subtitle="Découvrez notre gamme complète de services digitaux pour développer votre activité en ligne."
             />
 
-            <ExpertiseGrid expertiseCards={expertiseCards} />
+            <ExpertiseFilter 
+              selectedCategory={selectedCategory}
+              onSelectCategory={handleCategoryChange}
+            />
+
+            <ExpertiseGrid 
+              expertiseCards={expertiseCards} 
+              selectedCategory={selectedCategory}
+            />
           </div>
         </section>
 

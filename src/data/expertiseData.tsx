@@ -13,7 +13,18 @@ import {
 } from 'lucide-react';
 import { ExpertiseCardProps } from '@/components/expertise/ExpertiseCard';
 
-export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
+// Define the categories
+export type ExpertiseCategory = 'web' | 'marketing' | 'media' | 'mobile' | 'all';
+
+export const expertiseCategories = [
+  { id: 'all', label: 'Tous' },
+  { id: 'web', label: 'Web & E-commerce' },
+  { id: 'marketing', label: 'Marketing digital' },
+  { id: 'media', label: 'Médias & Photos' },
+  { id: 'mobile', label: 'Mobile & Applications' }
+];
+
+export const expertiseCards: (Omit<ExpertiseCardProps, 'ref' | 'inView'> & { category: ExpertiseCategory })[] = [
   {
     icon: <Globe size={24} />,
     title: "Création de site internet",
@@ -26,7 +37,8 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "Adapté à tous les appareils"
     ],
     price: "0",
-    delay: 100
+    delay: 100,
+    category: 'web'
   },
   {
     icon: <Search size={24} />,
@@ -40,7 +52,8 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "Rapports mensuels détaillés"
     ],
     price: "0",
-    delay: 200
+    delay: 200,
+    category: 'marketing'
   },
   {
     icon: <MapPin size={24} />,
@@ -54,7 +67,8 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "Suivi des statistiques"
     ],
     price: "0",
-    delay: 300
+    delay: 300,
+    category: 'marketing'
   },
   {
     icon: <BarChart3 size={24} />,
@@ -68,7 +82,8 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "Rapports trimestriels"
     ],
     price: "0",
-    delay: 400
+    delay: 400,
+    category: 'marketing'
   },
   {
     icon: <Users size={24} />,
@@ -82,7 +97,8 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "Veille concurrentielle"
     ],
     price: "0",
-    delay: 500
+    delay: 500,
+    category: 'marketing'
   },
   {
     icon: <Camera size={24} />,
@@ -96,7 +112,8 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "Optimisation pour le web"
     ],
     price: "0",
-    delay: 600
+    delay: 600,
+    category: 'media'
   },
   {
     icon: <Smartphone size={24} />,
@@ -110,7 +127,8 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "Analyses et statistiques"
     ],
     price: "0",
-    delay: 700
+    delay: 700,
+    category: 'mobile'
   },
   {
     icon: <ShoppingCart size={24} />,
@@ -124,7 +142,8 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "Tableau de bord détaillé"
     ],
     price: "0",
-    delay: 800
+    delay: 800,
+    category: 'web'
   },
   {
     icon: <Mail size={24} />,
@@ -138,6 +157,7 @@ export const expertiseCards: Omit<ExpertiseCardProps, 'ref' | 'inView'>[] = [
       "A/B testing"
     ],
     price: "0",
-    delay: 900
+    delay: 900,
+    category: 'marketing'
   }
 ];
