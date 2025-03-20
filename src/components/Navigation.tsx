@@ -124,7 +124,7 @@ const Navigation = () => {
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Changed background to white */}
         <div 
           className={cn(
             "fixed inset-0 z-50 bg-white transition-transform duration-300 lg:hidden",
@@ -141,7 +141,7 @@ const Navigation = () => {
                 <img 
                   src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
                   alt="i-numera logo" 
-                  className="h-12 w-auto" // Increased from h-10 to h-12
+                  className="h-12 w-auto"
                 />
               </Link>
               <button 
