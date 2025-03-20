@@ -55,7 +55,7 @@ const ExpertiseCard = ({ icon, title, description, features, delay }: ExpertiseC
       </div>
       <div className="p-6 bg-gray-50 mt-auto">
         <Link
-          to="/devis"
+          to="/contact"
           className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full text-white bg-red-600 hover:bg-red-700 transition-all font-medium hover:shadow-lg group"
         >
           Je me lance !

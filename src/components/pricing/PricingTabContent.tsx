@@ -85,7 +85,7 @@ const PricingTabContent: React.FC<PricingTabContentProps> = ({ plans }) => {
             plan.popular ? "bg-red-50" : "bg-gray-50"
           )}>
             <Link
-              to="/devis"
+              to="/contact"
               className={cn(
                 "w-full inline-flex items-center justify-center px-5 py-3 rounded-full font-medium transition-all group",
                 plan.popular 

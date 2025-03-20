@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Link } from 'react-router-dom';
 
 export interface PackageCardProps {
   type: string;
@@ -88,12 +89,14 @@ const PackageCard = ({
         </Accordion>
         
         <div className="mt-8">
-          <Button 
-            className={`w-full group ${buttonColor}`}
-          >
-            Je me lance !
-            <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <Link to="/contact">
+            <Button 
+              className={`w-full group ${buttonColor}`}
+            >
+              Je me lance !
+              <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </Card>
