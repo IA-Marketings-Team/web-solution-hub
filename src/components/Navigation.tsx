@@ -41,17 +41,20 @@ const Navigation = () => {
   ];
 
   // Check if we're on a page with dark header (like Contact page)
-  const isDarkHeader = location.pathname === '/contact';
+  const isDarkHeader = false; // Removed the dark header for contact page
+  const isContactPage = location.pathname === '/contact';
   
   return (
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 lg:px-12',
-        scrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-md py-3' 
-          : isDarkHeader 
-            ? 'bg-darkblue-900/90 backdrop-blur-md py-5' 
-            : 'bg-transparent py-5'
+        isContactPage
+          ? 'bg-white shadow-md py-3' // Always white for contact page
+          : scrolled 
+            ? 'bg-white/90 backdrop-blur-md shadow-md py-3' 
+            : isDarkHeader 
+              ? 'bg-darkblue-900/90 backdrop-blur-md py-5' 
+              : 'bg-transparent py-5'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -78,9 +81,11 @@ const Navigation = () => {
                 'text-sm font-medium transition-colors hover:text-darkblue-600',
                 location.pathname === item.path 
                   ? 'text-darkblue-800' 
-                  : (!scrolled && isDarkHeader) 
-                    ? 'text-white/90' 
-                    : 'text-darkblue-900/80'
+                  : (isContactPage)
+                    ? 'text-darkblue-900/80'
+                    : (!scrolled && isDarkHeader) 
+                      ? 'text-white/90' 
+                      : 'text-darkblue-900/80'
               )}
             >
               {item.name}
@@ -94,9 +99,7 @@ const Navigation = () => {
             to="/contact" 
             className={cn(
               "px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg",
-              (!scrolled && isDarkHeader) 
-                ? "bg-red-600 hover:bg-red-700 text-white" 
-                : "bg-red-600 hover:bg-red-700 text-white"
+              "bg-red-600 hover:bg-red-700 text-white"
             )}
           >
             Contactez-nous
@@ -105,9 +108,11 @@ const Navigation = () => {
             to="/devis" 
             className={cn(
               "px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg",
-              (!scrolled && isDarkHeader) 
-                ? "bg-white hover:bg-gray-100 text-darkblue-900" 
-                : "bg-darkblue-800 hover:bg-darkblue-900 text-white"
+              (isContactPage)
+                ? "bg-darkblue-800 hover:bg-darkblue-900 text-white"
+                : (!scrolled && isDarkHeader) 
+                  ? "bg-white hover:bg-gray-100 text-darkblue-900" 
+                  : "bg-darkblue-800 hover:bg-darkblue-900 text-white"
             )}
           >
             Demander un devis
@@ -118,7 +123,7 @@ const Navigation = () => {
         <button 
           className={cn(
             "lg:hidden p-2",
-            (!scrolled && isDarkHeader) ? "text-white" : "text-darkblue-900"
+            "text-darkblue-900"
           )}
           onClick={toggleMenu}
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
