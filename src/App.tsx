@@ -14,6 +14,7 @@ import Devis from "./pages/Devis";
 import NotFound from "./pages/NotFound";
 import Faq from "./pages/Faq";
 import Support from "./pages/Support";
+import Blog from "./pages/Blog";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/references" element={<References />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/devis" element={<Devis />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/support" element={<Support />} />
           <Route path="/about" element={<Contact />} />

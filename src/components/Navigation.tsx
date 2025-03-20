@@ -37,6 +37,7 @@ const Navigation = () => {
     { name: 'Vous êtes', path: '/vous-etes' },
     { name: 'Nos tarifs', path: '/pricing' },
     { name: 'Nos références', path: '/references' },
+    { name: 'Blog', path: '/blog' },
     { name: 'i-numera et vous', path: '/contact' },
   ];
 
