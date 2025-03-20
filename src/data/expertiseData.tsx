@@ -6,7 +6,6 @@ import {
   MapPin, 
   BarChart3, 
   Users, 
-  Camera, 
   Smartphone,
   ShoppingCart,
   Mail
@@ -20,7 +19,6 @@ export const expertiseCategories = [
   { id: 'all', label: 'Tous' },
   { id: 'web', label: 'Web & E-commerce' },
   { id: 'marketing', label: 'Marketing digital' },
-  { id: 'media', label: 'Médias & Photos' },
   { id: 'mobile', label: 'Mobile & Applications' }
 ];
 
@@ -99,21 +97,6 @@ export const expertiseCards: (Omit<ExpertiseCardProps, 'ref' | 'inView'> & { cat
     price: "0",
     delay: 500,
     category: 'marketing'
-  },
-  {
-    icon: <Camera size={24} />,
-    title: "Photos et Vidéos",
-    description: "Mettez en valeur votre activité avec du contenu visuel professionnel.",
-    features: [
-      "Shooting photo professionnel",
-      "Montage et retouche",
-      "Vidéos promotionnelles",
-      "Visite virtuelle 360°",
-      "Optimisation pour le web"
-    ],
-    price: "0",
-    delay: 600,
-    category: 'media'
   },
   {
     icon: <Smartphone size={24} />,
