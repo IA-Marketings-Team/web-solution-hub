@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Jean Dupont",
     business: "Boulangerie La Mie Dorée",
-    comment: "Depuis que j'ai fait appel à Linkeo pour mon site et ma présence Google, j'ai vu une augmentation significative du nombre de clients. Je recommande vivement leurs services !",
+    comment: "Depuis que j'ai fait appel à i-numera pour mon site et ma présence Google, j'ai vu une augmentation significative du nombre de clients. Je recommande vivement leurs services !",
     rating: 5,
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     date: "15/04/2023"
@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     id: 3,
     name: "Thomas Moreau",
     business: "Garage Auto Prestige",
-    comment: "Linkeo a créé un site qui représente parfaitement mon activité. Le référencement local fonctionne à merveille et mes clients me trouvent facilement. Excellent travail !",
+    comment: "i-numera a créé un site qui représente parfaitement mon activité. Le référencement local fonctionne à merveille et mes clients me trouvent facilement. Excellent travail !",
     rating: 4,
     image: "https://randomuser.me/api/portraits/men/62.jpg",
     date: "08/03/2023"
@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
     id: 4,
     name: "Sophie Dubois",
     business: "Fleuriste Les Pétales",
-    comment: "Grâce à Linkeo, ma boutique est bien positionnée sur Google. Le site est magnifique et répond parfaitement à mes attentes. Je suis très satisfaite de leur service.",
+    comment: "Grâce à i-numera, ma boutique est bien positionnée sur Google. Le site est magnifique et répond parfaitement à mes attentes. Je suis très satisfaite de leur service.",
     rating: 5,
     image: "https://randomuser.me/api/portraits/women/17.jpg",
     date: "30/01/2023"
@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
     id: 5,
     name: "Pierre Martin",
     business: "Restaurant Le Gourmet",
-    comment: "La gestion de ma e-réputation par Linkeo est un vrai plus pour mon restaurant. Les avis positifs sont mis en avant et mon taux de réservation a augmenté.",
+    comment: "La gestion de ma e-réputation par i-numera est un vrai plus pour mon restaurant. Les avis positifs sont mis en avant et mon taux de réservation a augmenté.",
     rating: 5,
     image: "https://randomuser.me/api/portraits/men/54.jpg",
     date: "12/02/2023"
