@@ -51,18 +51,18 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
               <div className="aspect-[4/3] relative overflow-hidden">
-                {/* Logo positioned lower and more to the left */}
-                <div className="absolute top-16 left-6 z-10">
+                {/* Logo positioned in the center of the image */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
                   <img 
-                    src="/lovable-uploads/b24ee520-7478-4b85-b844-07dbec409cf5.png" 
+                    src="/lovable-uploads/cd3f8bcb-8778-449d-a5d2-e873aeedbd9c.png" 
                     alt="i-numera logo" 
-                    className="w-56 h-auto drop-shadow-lg" 
+                    className="w-80 h-auto drop-shadow-lg" 
                   />
                 </div>
                 
                 {/* Professional smiling woman image with increased white overlay for better logo visibility */}
                 <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-white/60 z-[5]"></div>
+                  <div className="absolute inset-0 bg-white/80 z-[5]"></div>
                   <img 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
                     alt="Femme professionnelle souriante avec des lunettes" 
