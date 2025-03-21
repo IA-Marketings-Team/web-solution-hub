@@ -3,7 +3,12 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
 import PackageCard from './PackageCard';
-import { artisanPackage, commercantPackage } from '@/data/packageData';
+import { 
+  artisanPackage, 
+  commercantPackage,
+  artisanPremierPackage,
+  commercantPremierPackage
+} from '@/data/packageData';
 
 const Packages = () => {
   const [ref, inView] = useInView({
@@ -35,7 +40,7 @@ const Packages = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
           <div className={cn(
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
             "transition-all duration-700 delay-100"
@@ -44,9 +49,21 @@ const Packages = () => {
           </div>
           <div className={cn(
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "transition-all duration-700 delay-200"
+          )}>
+            <PackageCard {...artisanPremierPackage} />
+          </div>
+          <div className={cn(
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
             "transition-all duration-700 delay-300"
           )}>
             <PackageCard {...commercantPackage} />
+          </div>
+          <div className={cn(
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "transition-all duration-700 delay-400"
+          )}>
+            <PackageCard {...commercantPremierPackage} />
           </div>
         </div>
       </div>
