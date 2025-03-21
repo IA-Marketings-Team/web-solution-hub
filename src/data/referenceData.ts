@@ -42,7 +42,7 @@ export const referenceData: Reference[] = [
     url: "",
     categoryId: "websites"
   },  
-  {
+ /*  {
     id: "poissonnerie-michelet",
     name: "Poissonnerie Michelet",
     sector: "Poissonnerie",
@@ -57,7 +57,7 @@ export const referenceData: Reference[] = [
     description: "Le Garage Martin est spécialisé dans la réparation et l'entretien de véhicules toutes marques. Avec plus de 20 ans d'expérience, notre équipe de mécaniciens qualifiés offre un service personnalisé et de qualité.",
     url: "",
     categoryId: "seo"
-  },
+  }, */
 
 ];
 
