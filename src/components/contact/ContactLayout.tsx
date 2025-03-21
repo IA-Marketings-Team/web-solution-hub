@@ -1,18 +1,16 @@
 
 import React from 'react';
 import BusinessInfo from './BusinessInfo';
-import ComplaintForm, { ComplaintFormValues } from './ComplaintForm';
 import ContactForm, { ContactFormValues } from './ContactForm';
 import FaqSidebar from './FaqSidebar';
+import ContactInfo from './ContactInfo';
 
 interface ContactLayoutProps {
   onContactSubmit: (data: ContactFormValues) => void;
-  onComplaintSubmit: (data: ComplaintFormValues) => void;
 }
 
 const ContactLayout: React.FC<ContactLayoutProps> = ({ 
-  onContactSubmit, 
-  onComplaintSubmit 
+  onContactSubmit
 }) => {
   return (
     <div className="container px-4 md:px-6 py-12">
@@ -22,13 +20,14 @@ const ContactLayout: React.FC<ContactLayoutProps> = ({
           <BusinessInfo />
         </div>
         
-        {/* Main Content - Complaint Form */}
+        {/* Main Content - Contact Form */}
         <div className="lg:col-span-1">
-          <ComplaintForm onSubmit={onComplaintSubmit} />
+          <ContactForm onSubmit={onContactSubmit} />
         </div>
         
         {/* Right Sidebar - FAQ and Contact Info */}
-        <div>
+        <div className="space-y-8">
+          <ContactInfo />
           <FaqSidebar />
         </div>
       </div>
