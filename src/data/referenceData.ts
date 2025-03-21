@@ -62,7 +62,7 @@ export const referenceData: Reference[] = [
 ];
 
 export const partnerLogos: PartnerLogo[] = [
-  {
+  /* {
     name: "Entreprise A",
     image: "https://placehold.co/200x100/e2e8f0/1e3a8a?text=Logo+A"
   },
@@ -109,5 +109,5 @@ export const partnerLogos: PartnerLogo[] = [
   {
     name: "Entreprise L",
     image: "https://placehold.co/200x100/e2e8f0/1e3a8a?text=Logo+L"
-  }
+  } */
 ];

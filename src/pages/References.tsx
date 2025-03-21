@@ -1,15 +1,14 @@
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-import { ExternalLink, Tag, Check } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { ExternalLink, Tag, Check } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { cn } from '@/lib/utils';
-import { referenceCategories, referenceData } from '@/data/referenceData';
-import ReferenceCard from '@/components/reference/ReferenceCard';
-import PartnerLogos from '@/components/reference/PartnerLogos';
+import { cn } from "@/lib/utils";
+import { referenceCategories, referenceData } from "@/data/referenceData";
+import ReferenceCard from "@/components/reference/ReferenceCard";
+import PartnerLogos from "@/components/reference/PartnerLogos";
 
 const References = () => {
   return (
@@ -29,7 +28,8 @@ const References = () => {
             Nos Références
           </h1>
           <p className="text-lg text-darkblue-700/80 mb-12">
-            i-numera accompagne près de 20 000 entrepreneurs, artisans et TPE dans 150 secteurs d'activités différents.
+            i-numera accompagne près de 20 000 entrepreneurs, artisans et TPE
+            dans 150 secteurs d'activités différents.
           </p>
         </motion.div>
 
@@ -46,7 +46,10 @@ const References = () => {
             </div>
           </div>
           <h2 className="text-xl md:text-2xl font-semibold text-darkblue-900 mb-2">
-            Professionnels de la construction, de la beauté, de la restauration, etc.,<br />ils font confiance à i-numera
+            Professionnels de la construction, de la beauté, de la restauration,
+            etc.,
+            <br />
+            ils font confiance à i-numera
           </h2>
         </motion.div>
 
@@ -59,14 +62,14 @@ const References = () => {
         >
           <Tabs defaultValue="all" className="w-full">
             <TabsList className="grid grid-cols-2 md:grid-cols-4 h-auto gap-2 bg-transparent mb-8">
-              <TabsTrigger 
-                value="all" 
+              <TabsTrigger
+                value="all"
                 className="data-[state=active]:bg-darkblue-800 data-[state=active]:text-white rounded-full py-2"
               >
                 Tous nos clients
               </TabsTrigger>
               {referenceCategories.map((category) => (
-                <TabsTrigger 
+                <TabsTrigger
                   key={category.id}
                   value={category.id}
                   className="data-[state=active]:bg-darkblue-800 data-[state=active]:text-white rounded-full py-2"
@@ -79,25 +82,29 @@ const References = () => {
             <TabsContent value="all" className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {referenceData.map((reference, index) => (
-                  <ReferenceCard 
-                    key={reference.id} 
-                    reference={reference} 
-                    index={index} 
+                  <ReferenceCard
+                    key={reference.id}
+                    reference={reference}
+                    index={index}
                   />
                 ))}
               </div>
             </TabsContent>
 
             {referenceCategories.map((category) => (
-              <TabsContent key={category.id} value={category.id} className="mt-0">
+              <TabsContent
+                key={category.id}
+                value={category.id}
+                className="mt-0"
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {referenceData
-                    .filter(ref => ref.categoryId === category.id)
+                    .filter((ref) => ref.categoryId === category.id)
                     .map((reference, index) => (
-                      <ReferenceCard 
-                        key={reference.id} 
-                        reference={reference} 
-                        index={index} 
+                      <ReferenceCard
+                        key={reference.id}
+                        reference={reference}
+                        index={index}
                       />
                     ))}
                 </div>
@@ -113,13 +120,13 @@ const References = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-20"
         >
-          <div className="text-center mb-10">
+          {/*  <div className="text-center mb-10">
             <h2 className="text-2xl font-semibold text-darkblue-900">
               Ils nous font confiance
             </h2>
             <div className="h-1 w-16 bg-red-600 mt-2 mx-auto"></div>
-          </div>
-          
+          </div> */}
+
           <PartnerLogos />
         </motion.div>
 
@@ -134,17 +141,18 @@ const References = () => {
             Vous souhaitez faire partie de nos références ?
           </h2>
           <p className="text-darkblue-700 mb-8 max-w-2xl mx-auto">
-            Contactez-nous pour discuter de votre projet et rejoignez notre réseau de clients satisfaits.
+            Contactez-nous pour discuter de votre projet et rejoignez notre
+            réseau de clients satisfaits.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="px-6 py-3 text-base font-medium rounded-full transition-all hover:shadow-lg bg-red-600 hover:bg-red-700 text-white w-full sm:w-auto text-center"
             >
               Contactez-nous
             </Link>
-            <Link 
-              to="/devis" 
+            <Link
+              to="/devis"
               className="px-6 py-3 text-base font-medium rounded-full transition-all hover:shadow-lg bg-darkblue-800 hover:bg-darkblue-900 text-white w-full sm:w-auto text-center"
             >
               Demander un devis
