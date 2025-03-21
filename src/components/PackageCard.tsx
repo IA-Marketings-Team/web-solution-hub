@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Award } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -50,7 +50,9 @@ const PackageCard = ({
     ? "border-white/20" 
     : "border-gray-200";
 
-  const premiumBadgeColor = "bg-red-500 hover:bg-red-600 text-white";
+  const premiumBadgeColor = isPrimary 
+    ? "bg-red-500/90 hover:bg-red-500 text-white" 
+    : "bg-red-500 hover:bg-red-600 text-white";
   
   return (
     <Card className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${bgColor}`}>
@@ -99,7 +101,8 @@ const PackageCard = ({
           <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between mb-4">
               <Badge className={premiumBadgeColor}>
-                Premium
+                <Award size={14} className="mr-1" />
+                Premier
               </Badge>
             </div>
             <Accordion type="single" collapsible className="w-full">
