@@ -37,11 +37,11 @@ export const referenceData: Reference[] = [
   {
     id: "GeoArchitectural",
     name: "GeoArchitectural",
-    sector: "Paysagistes",
-    description: "Paysagistes renommés dans la région Nord-Pas-de-Calais, Nature d'intérieur compte de nombreux clients fidèles parmi les entreprises et les collectivités. Proposant la vente et la location de plantes d'intérieur, Nature d'intérieur apporte une touche de bien-être à vos bureaux ou lieux publics.",
+    sector: "Architecture, BTP",
+    description: "GeoArchitectural est un acteur clé dans le domaine de l'architecture et du BTP, spécialisé dans la conception et l'aménagement de projets urbains et de bâtiments. Avec une expertise reconnue en conception de structures innovantes et durables, l'entreprise offre des solutions sur-mesure pour des projets résidentiels, commerciaux et publics, en veillant à intégrer harmonieusement l'environnement naturel dans chaque projet.",
     url: "",
     categoryId: "websites"
-  },
+  },  
   {
     id: "poissonnerie-michelet",
     name: "Poissonnerie Michelet",

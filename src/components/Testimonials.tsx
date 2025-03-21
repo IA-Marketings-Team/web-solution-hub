@@ -83,7 +83,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         maxWidth: '350px'
       }}
     >
-      <div className="flex items-center space-x-1 mb-2">
+      <div className="flex items-center space-x-1 mb-2" style={{ userSelect: 'none' }}>
         {Array.from({ length: 5 }).map((_, i) => (
           <Star
             key={i}
@@ -92,8 +92,8 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           />
         ))}
       </div>
-      <p className="text-darkblue-800 mb-6 italic flex-grow">"{testimonial.comment}"</p>
-      <div className="flex items-center mt-auto">
+      <p className="text-darkblue-800 mb-6 italic flex-grow" style={{ userSelect: 'none' }}>"{testimonial.comment}"</p>
+      <div className="flex items-center mt-auto" style={{ userSelect: 'none' }}>
         <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border-2 border-white shadow-sm">
           <img
             src={testimonial.image}
@@ -130,7 +130,8 @@ const Testimonials = () => {
             inView ? "opacity-100" : "opacity-0"
           )}
           style={{ 
-            transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1)'
+            transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1)',
+            userSelect: 'none'
           }}
         >
           <div className="inline-block rounded-full px-3 py-1 text-sm bg-red-100 text-red-800 mb-4">
