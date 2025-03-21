@@ -5,9 +5,9 @@ import { cn } from '@/lib/utils';
 import PackageCard from './PackageCard';
 import { 
   artisanPackage, 
-  commercantPackage, 
-  artisanPremierPackage, 
-  commercantPremierPackage 
+  commercantPackage,
+  artisanPremierPackage,
+  commercantPremierPackage
 } from '@/data/packageData';
 
 const Packages = () => {
@@ -36,11 +36,11 @@ const Packages = () => {
             Des solutions adaptées à votre activité
           </h2>
           <p className="text-xl text-darkblue-700/80">
-            Découvrez nos packs essentiels et premium pour les artisans et commerçants.
+            Découvrez nos packs essentiels pour les artisans et commerçants.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
           <div className={cn(
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
             "transition-all duration-700 delay-100"
