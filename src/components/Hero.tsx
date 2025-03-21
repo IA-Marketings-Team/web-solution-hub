@@ -19,6 +19,34 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
       <div className="container px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+          <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
+              <div className="aspect-[4/3] relative overflow-hidden">
+                {/* Only the new logo in center */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <img 
+                    src="/lovable-uploads/b3c33571-dd4d-4269-a516-f847893fdd7f.png" 
+                    alt="i-numera logo" 
+                    className="w-[1500px] max-w-[95%] h-auto drop-shadow-lg transform scale-110" 
+                  />
+                </div>
+                
+                {/* Professional smiling woman image with increased white overlay for better logo visibility */}
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 bg-white/90 z-[5]"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
+                    alt="Femme professionnelle souriante avec des lunettes" 
+                    className="w-full h-full object-cover opacity-30"
+                  />
+                </div>
+              </div>
+            </div>
+            {/* Decorative Elements */}
+            <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-red-500 rounded-full blur-2xl opacity-20"></div>
+            <div className="absolute -top-8 -right-8 w-20 h-20 bg-darkblue-500 rounded-full blur-3xl opacity-20"></div>
+          </div>
+          
           <div className="flex flex-col space-y-8 animate-fade-in">
             <div className="space-y-5 max-w-[640px]">
               <div className="inline-block rounded-full px-3 py-1 text-sm bg-darkblue-50 text-darkblue-900 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
@@ -47,33 +75,6 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                 <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-          </div>
-          <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
-              <div className="aspect-[4/3] relative overflow-hidden">
-                {/* Only the new logo in center */}
-                <div className="absolute inset-0 flex items-center justify-center z-10">
-                  <img 
-                    src="/lovable-uploads/b3c33571-dd4d-4269-a516-f847893fdd7f.png" 
-                    alt="i-numera logo" 
-                    className="w-[1500px] max-w-[95%] h-auto drop-shadow-lg transform scale-110" 
-                  />
-                </div>
-                
-                {/* Professional smiling woman image with increased white overlay for better logo visibility */}
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-white/90 z-[5]"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" 
-                    alt="Femme professionnelle souriante avec des lunettes" 
-                    className="w-full h-full object-cover opacity-30"
-                  />
-                </div>
-              </div>
-            </div>
-            {/* Decorative Elements */}
-            <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-red-500 rounded-full blur-2xl opacity-20"></div>
-            <div className="absolute -top-8 -right-8 w-20 h-20 bg-darkblue-500 rounded-full blur-3xl opacity-20"></div>
           </div>
         </div>
       </div>
