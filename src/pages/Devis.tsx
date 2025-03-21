@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -89,19 +88,6 @@ const Devis = () => {
                   </p>
                 </CardContent>
               </Card>
-              
-              <div className="h-64 md:h-80 relative rounded-lg overflow-hidden shadow-md">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.6964284559507!2d2.3455093764728066!3d48.85296730030913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671e0551d56c3%3A0x48f651de26c406ea!2sNotre-Dame%20de%20Paris!4m5!3m4!1s0x47e671e0551d56c3%3A0x48f651de26c406ea!8m2!3d48.8529682!4d2.3477005!5e0!3m2!1sen!2sfr!4v1686139268479!5m2!1sen!2sfr"
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Carte Google Maps"
-                />
-              </div>
             </div>
             
             {/* Right Column - Form */}
