@@ -7,6 +7,8 @@ export interface PackageData {
   image: string;
   features: string[];
   isPrimary: boolean;
+  hasPremium?: boolean;
+  premiumFeatures?: string[];
 }
 
 // Artisan package data
@@ -21,13 +23,17 @@ export const artisanPackage: PackageData = {
     "Quote by i-numera : Formulaire de devis en ligne, outil devis/facturation, bibliothèque de prix et produits, base de données clients, intégration GMB et réseaux sociaux",
     "Fiche d'établissement Google : Création et administration de la fiche GMB, intégration de logo et photos, QR Code pour avis, animation trimestrielle, campagnes de collecte d'avis",
     "Deliver by i-numera : E-boutique (Click & Collect), paiement en ligne, statistiques d'activité",
-    "i-mailx : Messagerie professionnelle, signature personnalisée, calendrier partagé",
     "E-réputation : Audit, publication hebdomadaire, newsletter, modération des avis, rapports mensuels, expert dédié",
     "Booster SEO : Rédaction de 30 landing pages, inscriptions annuaires, articles de blog",
     "Achat d'espace : Sélection des mots clés, création et optimisation des annonces, suivi des budgets",
     "Service et accompagnement : Suivi annuel, optimisation SEM, rapports SEA, accès au service client, hébergement, interface administrateur, modifications du site, call tracking"
   ],
-  isPrimary: true
+  isPrimary: true,
+  hasPremium: true,
+  premiumFeatures: [
+    "i-mailx : Messagerie professionnelle, signature personnalisée, calendrier partagé",
+    "Suivi-expert : Accompagnement personnalisé par un expert dédié, rapports mensuels, optimisation continue"
+  ]
 };
 
 // Commercants package data

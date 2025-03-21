@@ -15,6 +15,8 @@ export interface PackageCardProps {
   features: string[];
   image: string;
   isPrimary?: boolean;
+  hasPremium?: boolean;
+  premiumFeatures?: string[];
 }
 
 const PackageCard = ({ 
@@ -23,6 +25,8 @@ const PackageCard = ({
   features,
   image,
   isPrimary = false,
+  hasPremium = false,
+  premiumFeatures = [],
 }: PackageCardProps) => {
   // Use the site's color scheme with blue and red
   const bgColor = isPrimary 
@@ -45,6 +49,8 @@ const PackageCard = ({
   const accordionBorderColor = isPrimary 
     ? "border-white/20" 
     : "border-gray-200";
+
+  const premiumBadgeColor = "bg-red-500 hover:bg-red-600 text-white";
   
   return (
     <Card className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${bgColor}`}>
@@ -87,6 +93,39 @@ const PackageCard = ({
             );
           })}
         </Accordion>
+        
+        {/* Premium features section */}
+        {hasPremium && premiumFeatures && premiumFeatures.length > 0 && (
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between mb-4">
+              <Badge className={premiumBadgeColor}>
+                Premium
+              </Badge>
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+              {premiumFeatures.map((feature, index) => {
+                const parts = feature.split(': ');
+                const title = parts[0];
+                const description = parts.length > 1 ? parts[1] : '';
+                
+                return (
+                  <AccordionItem 
+                    key={`premium-${index}`}
+                    value={`premium-${index}`}
+                    className={accordionBorderColor}
+                  >
+                    <AccordionTrigger className={accordionTriggerColor}>
+                      {title}
+                    </AccordionTrigger>
+                    <AccordionContent className={mutedTextColor}>
+                      {description}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
+            </Accordion>
+          </div>
+        )}
         
         <div className="mt-8">
           <Link to="/contact">
