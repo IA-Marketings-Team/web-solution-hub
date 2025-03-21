@@ -51,8 +51,8 @@ const PackageCard = ({
     : "border-gray-200";
 
   const premiumBadgeColor = isPrimary 
-    ? "bg-red-500/90 hover:bg-red-500 text-white" 
-    : "bg-red-500 hover:bg-red-600 text-white";
+    ? "bg-red-500/90 hover:bg-red-500 text-white text-lg py-2 px-4 flex items-center" 
+    : "bg-red-500 hover:bg-red-600 text-white text-lg py-2 px-4 flex items-center";
   
   return (
     <Card className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${bgColor}`}>
@@ -101,7 +101,7 @@ const PackageCard = ({
           <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between mb-4">
               <Badge className={premiumBadgeColor}>
-                <Award size={18} className="mr-2" />
+                <Award size={22} className="mr-3" />
                 Premier
               </Badge>
             </div>
