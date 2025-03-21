@@ -100,8 +100,8 @@ const PackageCard = ({
         {hasPremium && premiumFeatures && premiumFeatures.length > 0 && (
           <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
             <div className="flex items-center justify-between mb-4">
-              <Badge className={`text-sm py-1 px-3 ${premiumBadgeColor}`}>
-                <Award size={16} className="mr-1.5" />
+              <Badge className={premiumBadgeColor}>
+                <Award size={18} className="mr-2" />
                 Premier
               </Badge>
             </div>
