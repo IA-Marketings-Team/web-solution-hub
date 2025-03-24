@@ -7,11 +7,11 @@ export const artisanPackage: PackageData = {
   image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=800", 
   features: [
     "Création d'un site web responsive design",
-    "Quote by i-numera : Formulaire de devis en ligne, outil devis/facturation, bibliothèque de prix et produits, base de données clients, intégration GMB et réseaux sociaux",
+    "Citation de i-numera : Formulaire de devis en ligne, outil de création de devis et facturation, catalogue de prix et produits, gestion des données clients, intégration à Google My Business et aux réseaux sociaux",
     "Fiche d'établissement Google : Création et administration de la fiche GMB, intégration de logo et photos, QR Code pour avis, animation trimestrielle, campagnes de collecte d'avis",
-    "Deliver by i-numera : E-boutique (Click & Collect), paiement en ligne, statistiques d'activité",
-    "E-réputation : Audit, publication hebdomadaire, newsletter, modération des avis, rapports mensuels, expert dédié",
-    "Booster SEO : Rédaction de 30 landing pages, inscriptions annuaires, articles de blog",
+    "Proposition d'i-numera : Boutique en ligne (Click & Collect), paiements en ligne, analyse des statistiques d'activité."
+    "Gestion de la réputation en ligne : Audit, publications hebdomadaires, newsletters, modération des avis, rapports mensuels, expert dédié."
+    "Optimisation SEO : Rédaction de 30 pages de destination, inscriptions dans des annuaires, rédaction d'articles de blog.",
     "Achat d'espace : Sélection des mots clés, création et optimisation des annonces, suivi des budgets",
     "Service et accompagnement : Suivi annuel, optimisation SEM, rapports SEA, accès au service client, hébergement, interface administrateur, modifications du site, call tracking"
   ],
@@ -32,11 +32,11 @@ export const commercantPackage: PackageData = {
   image: "https://plus.unsplash.com/premium_photo-1661721852953-3da7e4fa15d9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Updated image URL
   features: [
     "Création d'un site web responsive design",
+    "Citation de i-numera : Formulaire de devis en ligne, outil de création de devis et facturation, catalogue de prix et produits, gestion des données clients, intégration à Google My Business et aux réseaux sociaux",
     "Fiche d'établissement Google : Création et administration de la fiche GMB, intégration de logo et photos, QR Code pour avis, animation trimestrielle, campagnes de collecte d'avis",
-    "Deliver by i-numera : E-boutique (Click & Collect), paiement en ligne, statistiques d'activité",
-    "E-réputation : Audit, publication hebdomadaire, newsletter, modération des avis, rapports mensuels, expert dédié",
-    "Quote by i-numera : Formulaire de devis en ligne, outil devis/facturation, bibliothèque de prix et produits, base de données clients, intégration GMB et réseaux sociaux",
-    "Booster SEO : Rédaction de 30 landing pages, inscriptions annuaires, articles de blog",
+   "Proposition d'i-numera : Boutique en ligne (Click & Collect), paiements en ligne, analyse des statistiques d'activité.",
+    "Gestion de la réputation en ligne : Audit, publications hebdomadaires, newsletters, modération des avis, rapports mensuels, expert dédié.",
+    "Optimisation SEO : Rédaction de 30 pages de destination, inscriptions dans des annuaires, rédaction d'articles de blog.",
     "Achat d'espace : Sélection des mots clés, création et optimisation des annonces, suivi des budgets",
     "Service et accompagnement : Suivi annuel, optimisation SEM, rapports SEA, accès au service client, hébergement, interface administrateur, modifications du site, call tracking"
   ],
