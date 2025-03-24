@@ -29,8 +29,8 @@ const References = () => {
           </h1>
           <p className="text-lg text-darkblue-700/80 mb-12">
             i-numera, c’est plus de 5 ans d’expérience, 250 projets menés à bien
-            et plus de 700 sites web créés pour accompagner près de 20 000
-            entrepreneurs, artisans et TPE dans plus de 150 secteurs d’activité.
+            et plus de 700 sites web créés pour accompagner des entrepreneurs,
+            artisans et TPE dans plus de 150 secteurs d’activité.
           </p>
         </motion.div>
 
