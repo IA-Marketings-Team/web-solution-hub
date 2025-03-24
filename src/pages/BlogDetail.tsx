@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { blogPosts, BlogPost } from '@/data/blogData';
+import { blogPosts, BlogPost } from '@/data/blog';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';

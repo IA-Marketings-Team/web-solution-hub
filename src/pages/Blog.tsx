@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { blogPosts } from '@/data/blogData';
+import { blogPosts } from '@/data/blog';
+import { BlogPost } from '@/data/blog';
 import { Skeleton } from '@/components/ui/skeleton';
 import { 
   Pagination, 
@@ -73,7 +74,7 @@ const Blog = () => {
 };
 
 // Blog Post Card Component
-const BlogPostCard = ({ post }: { post: any }) => {
+const BlogPostCard = ({ post }: { post: BlogPost }) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-md transition-all hover:shadow-xl">
       <div className="relative h-48 overflow-hidden">
