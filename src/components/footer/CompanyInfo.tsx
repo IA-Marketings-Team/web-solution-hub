@@ -13,7 +13,7 @@ const CompanyInfo: React.FC = () => {
         />
       </div>
       <p className="text-darkblue-700 mb-6">
-        Des solutions digitales clés en main pour booster votre activité depuis plus de 20 ans.
+        Des solutions digitales clés en main pour booster votre activité depuis plus de 5 ans.
       </p>
       <SocialIcons />
     </div>
