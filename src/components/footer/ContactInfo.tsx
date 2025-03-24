@@ -10,8 +10,7 @@ const ContactInfo: React.FC = () => {
         <li className="flex items-start">
           <MapPin size={18} className="text-red-500 mr-3 mt-1 flex-shrink-0" />
           <span className="text-darkblue-700">
-            12 rue de la République<br />
-            75001 Paris, France
+            16 Allée du maine 38130 Grenoble
           </span>
         </li>
         <li className="flex items-center">
@@ -29,7 +28,7 @@ const ContactInfo: React.FC = () => {
             href="tel:+33102030405" 
             className="text-darkblue-700 hover:text-darkblue-900 transition-colors"
           >
-            +33 1 02 03 04 05
+            +33 5 54 54 58 60
           </a>
         </li>
       </ul>
