@@ -68,8 +68,12 @@ const PackageCard = ({
           <Badge className={badgeColor}>{type}</Badge>
           <Badge className={badgeColor}>Essentiel</Badge>
         </div>
-
         <h3 className={`text-2xl font-bold ${textColor} mb-6`}>{title}</h3>
+        <img
+          src={image}
+          alt="Artisan et commerçant en ligne"
+          className="w-full h-auto object-cover rounded-lg"
+        />
       </div>
 
       {/* Card content with accordion */}
