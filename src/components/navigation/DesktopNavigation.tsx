@@ -33,11 +33,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
             'text-sm font-medium transition-colors hover:text-darkblue-600',
             location.pathname === item.path 
               ? 'text-darkblue-800' 
-              : (isContactPage)
-                ? 'text-darkblue-900/80'
-                : (!scrolled && isDarkHeader) 
-                  ? 'text-white/90' 
-                  : 'text-darkblue-900/80'
+              : 'text-darkblue-900/80'
           )}
         >
           {item.name}

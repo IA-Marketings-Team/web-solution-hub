@@ -24,11 +24,7 @@ const DesktopCTA: React.FC<DesktopCTAProps> = ({ scrolled, isDarkHeader, isConta
       to="/devis" 
       className={cn(
         "px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg",
-        (isContactPage)
-          ? "bg-darkblue-800 hover:bg-darkblue-900 text-white"
-          : (!scrolled && isDarkHeader) 
-            ? "bg-white hover:bg-gray-100 text-darkblue-900" 
-            : "bg-darkblue-800 hover:bg-darkblue-900 text-white"
+        "bg-darkblue-800 hover:bg-darkblue-900 text-white"
       )}
     >
       Demander un devis
