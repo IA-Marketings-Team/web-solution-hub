@@ -1,4 +1,6 @@
 
+import { PackageData } from "./types/packageData";
+
 // Artisan package data
 export const artisanPackage: PackageData = {
   type: "Artisans",

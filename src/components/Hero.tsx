@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import HeroCarousel from './HeroCarousel';
 
 interface HeroProps {
   className?: string;
@@ -11,16 +12,19 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
     <section className={cn("relative w-full overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32", className)}>
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-10 opacity-5">
+      {/* Background Carousel */}
+      <HeroCarousel />
+      
+      {/* Background Pattern Overlay */}
+      <div className="absolute inset-0 -z-5 opacity-10">
         <div className="absolute -top-[40%] -right-[40%] h-[80%] w-[80%] rounded-full bg-darkblue-500/30 blur-[120px]" />
         <div className="absolute -bottom-[20%] -left-[20%] h-[60%] w-[60%] rounded-full bg-red-500/20 blur-[100px]" />
       </div>
 
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50 to-darkblue-100 shadow-xl">
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50/90 to-darkblue-100/90 shadow-xl backdrop-blur-sm">
               <div className="aspect-[4/3] relative overflow-hidden">
                 {/* Only the new logo in center */}
                 <div className="absolute inset-0 flex items-center justify-center z-10">
@@ -49,13 +53,13 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
           
           <div className="flex flex-col space-y-8 animate-fade-in">
             <div className="space-y-5 max-w-[640px]">
-              <div className="inline-block rounded-full px-3 py-1 text-sm bg-darkblue-50 text-darkblue-900 opacity-0 animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+              <div className="inline-block rounded-full px-3 py-1 text-sm bg-darkblue-50/90 text-darkblue-900 backdrop-blur-sm opacity-0 animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
                 Solutions digitales pour professionnels
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-darkblue-900 leading-tight opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-                Des solutions numériques <span className="text-red-600">clés en main</span> pour booster votre activité.
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white leading-tight opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
+                Des solutions numériques <span className="text-red-500">clés en main</span> pour booster votre activité.
               </h1>
-              <p className="text-xl text-darkblue-900/80 max-w-[600px] opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
+              <p className="text-xl text-white/90 max-w-[600px] opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
                 Nous accompagnons les professionnels et TPE/PME dans leur transformation digitale avec des solutions simples et efficaces.
               </p>
             </div>
