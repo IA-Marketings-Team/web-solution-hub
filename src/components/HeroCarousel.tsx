@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface HeroCarouselProps {
   className?: string;
@@ -17,18 +18,31 @@ const carouselImages = [
 
 const HeroCarousel: React.FC<HeroCarouselProps> = ({ className }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [api, setApi] = useState<any>();
 
   useEffect(() => {
+    if (!api) return;
+
+    const handleSelect = () => {
+      setCurrentSlide(api.selectedScrollSnap());
+    };
+
+    api.on("select", handleSelect);
+    
+    // Auto advance slides
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+      api.scrollNext();
     }, 5000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      api.off("select", handleSelect);
+      clearInterval(interval);
+    };
+  }, [api]);
 
   return (
     <div className={cn("absolute inset-0 -z-10 overflow-hidden", className)}>
-      <Carousel className="w-full h-full" opts={{ loop: true }}>
+      <Carousel className="w-full h-full" setApi={setApi} opts={{ loop: true }}>
         <CarouselContent className="h-full">
           {carouselImages.map((image, index) => (
             <CarouselItem key={index} className="h-full">
@@ -48,6 +62,41 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({ className }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
+        
+        {/* Custom navigation buttons */}
+        <div className="absolute bottom-8 right-8 z-20 flex gap-2">
+          <button 
+            onClick={() => api?.scrollPrev()} 
+            className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button 
+            onClick={() => api?.scrollNext()} 
+            className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+        
+        {/* Slide indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+          {carouselImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={cn(
+                "w-2 h-2 rounded-full transition-all",
+                index === currentSlide 
+                  ? "bg-white w-6" 
+                  : "bg-white/40 hover:bg-white/60"
+              )}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </Carousel>
     </div>
   );

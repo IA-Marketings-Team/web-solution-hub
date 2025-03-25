@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -12,7 +11,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ className }) => {
   return (
     <section className={cn("relative w-full overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32", className)}>
-      {/* Background Carousel */}
+      {/* Background Carousel Slider */}
       <HeroCarousel />
       
       {/* Background Pattern Overlay */}
@@ -23,6 +22,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
       <div className="container px-4 md:px-6 relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
+          {/* Logo image section - keep the same animations and styling */}
           <div className="relative lg:pl-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-darkblue-50/90 to-darkblue-100/90 shadow-xl backdrop-blur-sm">
               <div className="aspect-[4/3] relative overflow-hidden">
@@ -51,6 +51,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             <div className="absolute -top-8 -right-8 w-20 h-20 bg-darkblue-500 rounded-full blur-3xl opacity-20"></div>
           </div>
           
+          {/* Text and CTA section - keep the same content and animations */}
           <div className="flex flex-col space-y-8 animate-fade-in">
             <div className="space-y-5 max-w-[640px]">
               <div className="inline-block rounded-full px-3 py-1 text-sm bg-darkblue-50/90 text-darkblue-900 backdrop-blur-sm opacity-0 animate-fade-in" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
