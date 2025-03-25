@@ -22,39 +22,18 @@ const CallToAction: React.FC<CallToActionProps> = ({ className, variant = 'light
     <section 
       ref={ref} 
       className={cn(
-        "py-16 relative overflow-hidden",
+        "py-16",
         isDark ? "bg-darkblue-900 text-white" : "bg-white text-darkblue-900",
         className
       )}
     >
-      {/* Textured Background Pattern */}
-      <div className="absolute inset-0 -z-5 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="cta-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M0 0 L60 0 L60 60 L0 60 Z" fill="none" stroke={isDark ? "#ffffff" : "#1A1F2C"} strokeWidth="1"/>
-                <circle cx="30" cy="30" r="3" fill={isDark ? "#ffffff" : "#F44336"} opacity="0.5"/>
-                <circle cx="0" cy="0" r="3" fill={isDark ? "#ffffff" : "#F44336"} opacity="0.3"/>
-                <circle cx="60" cy="0" r="3" fill={isDark ? "#ffffff" : "#F44336"} opacity="0.3"/>
-                <circle cx="0" cy="60" r="3" fill={isDark ? "#ffffff" : "#F44336"} opacity="0.3"/>
-                <circle cx="60" cy="60" r="3" fill={isDark ? "#ffffff" : "#F44336"} opacity="0.3"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#cta-pattern)" />
-          </svg>
-        </div>
-        <div className="absolute -top-[40%] -right-[30%] h-[70%] w-[70%] rounded-full bg-red-500/20 blur-[100px]" />
-        <div className="absolute -bottom-[30%] -left-[20%] h-[60%] w-[60%] rounded-full bg-darkblue-500/20 blur-[100px]" />
-      </div>
-
       <div className="container px-4 md:px-6">
         <div 
           className={cn(
             "max-w-4xl mx-auto text-center p-8 rounded-2xl relative overflow-hidden",
             isDark 
-              ? "bg-darkblue-800/80 border border-darkblue-700 backdrop-blur-sm"
-              : "bg-gray-50/90 border border-gray-100 backdrop-blur-sm",
+              ? "bg-darkblue-800 border border-darkblue-700"
+              : "bg-gray-50 border border-gray-100",
             inView ? "opacity-100" : "opacity-0 translate-y-8"
           )}
           style={{ 

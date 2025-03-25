@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { Star } from "lucide-react";
@@ -147,24 +146,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Textured Background Pattern */}
-      <div className="absolute inset-0 -z-5 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="testimonials-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M0 20 L20 0 L40 20 L20 40 Z" fill="none" stroke="#1A1F2C" strokeWidth="1"/>
-                <circle cx="20" cy="20" r="2" fill="#F44336" opacity="0.5"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#testimonials-pattern)" />
-          </svg>
-        </div>
-        <div className="absolute -top-[20%] -right-[30%] h-[70%] w-[70%] rounded-full bg-red-500/20 blur-[100px]" />
-        <div className="absolute -bottom-[30%] -left-[30%] h-[70%] w-[70%] rounded-full bg-darkblue-500/20 blur-[100px]" />
-      </div>
-
+    <section className="py-20">
       <div className="container px-4 md:px-6">
         <div
           ref={ref}
