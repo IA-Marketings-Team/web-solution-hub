@@ -73,6 +73,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
 
     return () => clearInterval(interval);
   }, []);
+
   return (
     <section
       className={cn(
@@ -82,8 +83,8 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     >
       {/* Background Pattern Overlay */}
       <div className="absolute inset-0 -z-5 opacity-10">
-        <div className="absolute -top-[40%] -right-[40%] h-[80%] w-[80%] rounded-full bg-darkblue-500/30 blur-[120px]" />
-        <div className="absolute -bottom-[20%] -left-[20%] h-[60%] w-[60%] rounded-full bg-red-500/20 blur-[100px]" />
+        <div className="absolute -top-[40%] -right-[40%] h-[80%] w-[80%] rounded-full bg-darkblue-900 blur-[200px]" />
+        <div className="absolute -bottom-[20%] -left-[20%] h-[60%] w-[60%] rounded-full bg-red-500 blur-[100px]" />
       </div>
 
       {/* Background Carousel */}
@@ -96,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
               index === currentSlide ? "opacity-100" : "opacity-0"
             )}
           >
-            <div className="absolute inset-0 bg-black/50 z-10"></div>{" "}
+            <div className="absolute inset-0 bg-black/70 z-10"></div>{" "}
             {/* Dark overlay */}
             <img
               src={slide.backgroundImage}
@@ -107,6 +108,9 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
         ))}
       </div>
 
+      {/* White Gradient Overlay */}
+      <div className="absolute inset-y-0 left-0 w-[63%] bg-gradient-to-r from-white via-darkblue/80 to-transparent z-10 pointer-events-none"></div>
+
       <div className="container px-4 md:px-6 relative z-20">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           {/* Logo image section - keep the same animations and styling */}
@@ -114,7 +118,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             className="relative lg:pl-8 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
           >
-            <div className="relative rounded-2xl overflow-hidden  ">
+            <div className="relative rounded-2xl overflow-hidden">
               <div className="aspect-[4/3] relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center z-10">
                   <img
@@ -123,7 +127,6 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
                     className="w-[1500px] max-w-[95%] h-auto transform scale-110"
                   />
                 </div>
-                <div className="absolute inset-0 z-0"></div> {/* White Blur */}
               </div>
             </div>
             {/* Decorative Elements */}
