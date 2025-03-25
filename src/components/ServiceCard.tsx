@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
@@ -20,30 +19,30 @@ const ServiceCard = ({ icon, title, description, delay, className }: ServiceCard
   });
 
   return (
-    <div 
+    <div
       ref={ref}
       className={cn(
-        "relative rounded-2xl p-6 hover-lift transition-all bg-white border border-gray-100 shadow-sm",
+        "relative rounded-2xl p-6 hover-lift transition-all border border-gray-100 shadow-sm bg-gradient-to-r from-[#c3cce5] to-[#ecbeb9]",
         className,
         inView ? "opacity-100" : "opacity-0 translate-y-8"
       )}
-      style={{ 
-        transitionDelay: `${delay}ms`, 
-        transitionProperty: 'all', 
-        transitionDuration: '700ms', 
-        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' 
+      style={{
+        transitionDelay: `${delay}ms`,
+        transitionProperty: 'all',
+        transitionDuration: '500ms',
+        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
       }}
     >
       <div className="flex flex-col h-full">
         <div className="mb-6">
-          <div className="rounded-xl bg-red-50 p-3 text-red-600 w-12 h-12 flex items-center justify-center">
+          <div className="rounded-xl bg-[#D24043]/30 p-3 text-white w-12 h-12 flex items-center justify-center">
             {icon}
           </div>
         </div>
         <h3 className="text-xl font-semibold text-darkblue-900 mb-3">{title}</h3>
-        <p className="text-darkblue-700/80 mb-5 flex-grow">{description}</p>
-        <Link 
-          to="/expertise" 
+        <p className="text-darkblue-700 mb-5 flex-grow">{description}</p>
+        <Link
+          to="/expertise"
           className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 hover-slide-right group"
         >
           En savoir plus
