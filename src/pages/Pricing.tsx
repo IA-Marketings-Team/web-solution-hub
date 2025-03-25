@@ -1,13 +1,12 @@
-
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import Navigation from '@/components/Navigation';
-import Testimonials from '@/components/Testimonials';
-import CallToAction from '@/components/CallToAction';
-import Footer from '@/components/Footer';
-import PricingHeader from '@/components/pricing/PricingHeader';
-import PricingTabs from '@/components/pricing/PricingTabs';
-import PricingSteps from '@/components/pricing/PricingSteps';
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import Testimonials from "@/components/Testimonials";
+import CallToAction from "@/components/CallToAction";
+import Footer from "@/components/Footer";
+import PricingHeader from "@/components/pricing/PricingHeader";
+import PricingTabs from "@/components/pricing/PricingTabs";
+import PricingSteps from "@/components/pricing/PricingSteps";
 
 const Pricing = () => {
   const location = useLocation();
