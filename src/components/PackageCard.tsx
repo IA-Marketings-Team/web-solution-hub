@@ -78,7 +78,7 @@ const PackageCard = ({
       </div>
 
       {/* Card content with accordion - updated with more transparent background */}
-      <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"} relative z-10 ${isPrimary ? 'bg-darkblue-500/40' : 'bg-white/40'} backdrop-filter backdrop-blur-sm rounded-t-3xl mt-4`}>
+      <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"} relative z-10 ${isPrimary ? 'bg-darkblue-500/10' : 'bg-white/10'} backdrop-filter backdrop-blur-sm rounded-t-3xl mt-4`}>
         <Accordion type="single" collapsible className="w-full">
           {features.map((feature, index) => {
             // Split the feature into title and description at the first colon
