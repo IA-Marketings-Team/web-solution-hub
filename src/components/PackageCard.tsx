@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowRight, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -33,11 +34,11 @@ const PackageCard = ({
   premiumFeatures = [],
 }: PackageCardProps) => {
   // Use the site's color scheme with blue and red
-  const bgColor = isPrimary
-    ? "bg-darkblue-500 text-white"
+  const cardBgColor = isPrimary
+    ? "bg-darkblue-500"
     : "bg-white border border-gray-200";
 
-  const textColor = isPrimary ? "text-white" : "text-darkblue-900";
+  const cardTextColor = isPrimary ? "text-white" : "text-darkblue-900";
   const mutedTextColor = isPrimary ? "text-white/80" : "text-darkblue-600";
   const badgeColor = isPrimary
     ? "bg-white/20 hover:bg-white/30 text-white"
@@ -60,24 +61,24 @@ const PackageCard = ({
 
   return (
     <Card
-      className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${bgColor}`}
+      className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative h-full`}
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${isPrimary ? 'rgba(0, 30, 60, 0.95)' : 'rgba(255, 255, 255, 0.95)'} 30%), url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
       {/* Card header */}
-      <div className="p-6 pb-4">
+      <div className="p-6 pb-4 relative z-10">
         <div className="flex items-center justify-between mb-4">
           <Badge className={badgeColor}>{type}</Badge>
           <Badge className={badgeColor}>Essentiel</Badge>
         </div>
-        <h3 className={`text-2xl font-bold ${textColor} mb-6`}>{title}</h3>
-        <img
-          src={image}
-          alt="Artisan et commerçant en ligne"
-          className="w-full h-auto object-cover rounded-lg"
-        />
+        <h3 className={`text-2xl font-bold ${cardTextColor} mb-6`}>{title}</h3>
       </div>
 
       {/* Card content with accordion */}
-      <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"}`}>
+      <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"} relative z-10 bg-opacity-90 ${isPrimary ? 'bg-darkblue-500/90' : 'bg-white/90'} rounded-t-3xl mt-4`}>
         <Accordion type="single" collapsible className="w-full">
           {features.map((feature, index) => {
             // Split the feature into title and description at the first colon
