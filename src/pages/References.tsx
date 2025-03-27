@@ -1,12 +1,12 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ExternalLink, Tag, Check } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { referenceCategories, referenceData } from "@/data/referenceData";
+import { referenceData } from "@/data/referenceData";
 import ReferenceCard from "@/components/reference/ReferenceCard";
 import PartnerLogos from "@/components/reference/PartnerLogos";
 
@@ -28,9 +28,9 @@ const References = () => {
             Nos Références
           </h1>
           <p className="text-lg text-darkblue-700/80 mb-12">
-            i-numera, c’est plus de 5 ans d’expérience, 250 projets menés à bien
+            i-numera, c'est plus de 5 ans d'expérience, 250 projets menés à bien
             et plus de 700 sites web créés pour accompagner des entrepreneurs,
-            artisans et TPE dans plus de 150 secteurs d’activité.
+            artisans et TPE dans plus de 150 secteurs d'activité.
           </p>
         </motion.div>
 
@@ -54,64 +54,22 @@ const References = () => {
           </h2>
         </motion.div>
 
-        {/* Services Tabs */}
+        {/* References Grid - All references displayed */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mb-16"
         >
-          <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 h-auto gap-2 bg-transparent mb-8">
-              <TabsTrigger
-                value="all"
-                className="data-[state=active]:bg-darkblue-800 data-[state=active]:text-white rounded-full py-2"
-              >
-                Tous nos clients
-              </TabsTrigger>
-              {referenceCategories.map((category) => (
-                <TabsTrigger
-                  key={category.id}
-                  value={category.id}
-                  className="data-[state=active]:bg-darkblue-800 data-[state=active]:text-white rounded-full py-2"
-                >
-                  {category.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            <TabsContent value="all" className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {referenceData.map((reference, index) => (
-                  <ReferenceCard
-                    key={reference.id}
-                    reference={reference}
-                    index={index}
-                  />
-                ))}
-              </div>
-            </TabsContent>
-
-            {referenceCategories.map((category) => (
-              <TabsContent
-                key={category.id}
-                value={category.id}
-                className="mt-0"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {referenceData
-                    .filter((ref) => ref.categoryId === category.id)
-                    .map((reference, index) => (
-                      <ReferenceCard
-                        key={reference.id}
-                        reference={reference}
-                        index={index}
-                      />
-                    ))}
-                </div>
-              </TabsContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {referenceData.map((reference, index) => (
+              <ReferenceCard
+                key={reference.id}
+                reference={reference}
+                index={index}
+              />
             ))}
-          </Tabs>
+          </div>
         </motion.div>
 
         {/* Partner Logos */}
@@ -121,13 +79,6 @@ const References = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mb-20"
         >
-          {/*  <div className="text-center mb-10">
-            <h2 className="text-2xl font-semibold text-darkblue-900">
-              Ils nous font confiance
-            </h2>
-            <div className="h-1 w-16 bg-red-600 mt-2 mx-auto"></div>
-          </div> */}
-
           <PartnerLogos />
         </motion.div>
 
