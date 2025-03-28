@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowRight, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -26,6 +27,8 @@ export interface PackageCardProps {
 const PackageCard = ({
   type,
   title,
+  price,
+  setupFee,
   features,
   image,
   isPrimary = false,
@@ -37,7 +40,7 @@ const PackageCard = ({
     ? "bg-darkblue-500"
     : "bg-white border border-gray-200";
 
-  const cardTextColor = isPrimary ? "text-white" : "text-darkblue-900";
+  const textColor = isPrimary ? "text-white" : "text-darkblue-900";
   const mutedTextColor = isPrimary ? "text-white/80" : "text-darkblue-600";
   const badgeColor = isPrimary
     ? "bg-white/20 hover:bg-white/30 text-white"
@@ -58,34 +61,55 @@ const PackageCard = ({
     ? "bg-red-500/90 hover:bg-red-500 text-white text-lg py-2 px-4 flex items-center"
     : "bg-red-500 hover:bg-red-600 text-white text-lg py-2 px-4 flex items-center";
 
+  // Badge for "Nos packs"
+  const topBadgeColor = "bg-blue-600 text-white border-none";
+
   return (
     <Card
-      className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative h-full`}
-      style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${
-          isPrimary ? "rgba(0, 30, 60, 0.8)" : "rgba(255, 255, 255, 0.8)"
-        } 30%), url(${image})`,
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-      }}
+      className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 ${cardBgColor}`}
     >
-      {/* Card header */}
-      <div className="p-4 pb-2 relative z-10 h-60">
-        <div className="flex items-center justify-between mb-2">
-          <Badge className={badgeColor}>{type}</Badge>
-          <Badge className={badgeColor}>Essentiel</Badge>
+      {/* Card header with background image */}
+      <div 
+        className="relative p-6 pb-4"
+        style={{
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Background image with overlay */}
+        <div 
+          className="absolute inset-0 -z-10 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${image})`,
+            filter: "blur(1px)",
+          }}
+        >
+          {/* Overlay gradient */}
+          <div className={`absolute inset-0 ${isPrimary ? 'bg-darkblue-500/85' : 'bg-white/85'}`}></div>
         </div>
-        <h3 className={`text-2xl font-bold ${cardTextColor} mb-4`}>{title}</h3>
+
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex gap-2">
+            <Badge className={topBadgeColor}>Nos packs</Badge>
+            <Badge className={badgeColor}>{type}</Badge>
+          </div>
+        </div>
+        <h3 className={`text-2xl font-bold ${textColor} mb-2`}>{title}</h3>
+        
+        {/* Price information */}
+        <div className="mb-4">
+          <div className="text-sm text-opacity-80 ${mutedTextColor}">à partir de</div>
+          <div className={`text-3xl font-bold ${textColor}`}>
+            {price}€ <span className="text-lg font-normal">HT/mois</span>
+          </div>
+          <div className={`text-sm ${mutedTextColor}`}>
+            {setupFee}€ HT de frais de création
+          </div>
+        </div>
       </div>
 
       {/* Card content with accordion */}
-      <div
-        className={`p-4 pt-4 ${
-          isPrimary ? "" : "text-darkblue-800"
-        } relative z-10 bg-opacity-90 ${
-          isPrimary ? "bg-darkblue-500/90" : "bg-white/90"
-        } rounded-t-3xl mt-2`}
-      >
+      <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"}`}>
         <Accordion type="single" collapsible className="w-full">
           {features.map((feature, index) => {
             // Split the feature into title and description at the first colon
@@ -99,10 +123,10 @@ const PackageCard = ({
                 value={`item-${index}`}
                 className={accordionBorderColor}
               >
-                <AccordionTrigger className={`${accordionTriggerColor} py-2`}>
+                <AccordionTrigger className={accordionTriggerColor}>
                   {title}
                 </AccordionTrigger>
-                <AccordionContent className={`${mutedTextColor} py-2`}>
+                <AccordionContent className={mutedTextColor}>
                   {description}
                 </AccordionContent>
               </AccordionItem>
@@ -110,38 +134,40 @@ const PackageCard = ({
           })}
         </Accordion>
 
-        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-between mb-2">
-            <Badge className={premiumBadgeColor}>
-              <Award size={20} className="mr-2" />
-              Premium
-            </Badge>
+        {hasPremium && premiumFeatures.length > 0 && (
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between mb-4">
+              <Badge className={premiumBadgeColor}>
+                <Award size={22} className="mr-3" />
+                Premium
+              </Badge>
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+              {premiumFeatures.map((feature, index) => {
+                const parts = feature.split(": ");
+                const title = parts[0];
+                const description = parts.length > 1 ? parts[1] : "";
+
+                return (
+                  <AccordionItem
+                    key={`premium-${index}`}
+                    value={`premium-${index}`}
+                    className={accordionBorderColor}
+                  >
+                    <AccordionTrigger className={accordionTriggerColor}>
+                      {title}
+                    </AccordionTrigger>
+                    <AccordionContent className={mutedTextColor}>
+                      {description}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
+            </Accordion>
           </div>
-          <Accordion type="single" collapsible className="w-full">
-            {premiumFeatures.map((feature, index) => {
-              const parts = feature.split(": ");
-              const title = parts[0];
-              const description = parts.length > 1 ? parts[1] : "";
+        )}
 
-              return (
-                <AccordionItem
-                  key={`premium-${index}`}
-                  value={`premium-${index}`}
-                  className={accordionBorderColor}
-                >
-                  <AccordionTrigger className={`${accordionTriggerColor} py-2`}>
-                    {title}
-                  </AccordionTrigger>
-                  <AccordionContent className={`${mutedTextColor} py-2`}>
-                    {description}
-                  </AccordionContent>
-                </AccordionItem>
-              );
-            })}
-          </Accordion>
-        </div>
-
-        <div className="mt-6">
+        <div className="mt-8">
           <Link to="/contact">
             <Button className={`w-full group ${buttonColor}`}>
               Je me lance !
