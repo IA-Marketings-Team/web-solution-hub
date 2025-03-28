@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowRight, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
@@ -63,22 +62,30 @@ const PackageCard = ({
     <Card
       className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative h-full`}
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${isPrimary ? 'rgba(0, 30, 60, 0.95)' : 'rgba(255, 255, 255, 0.95)'} 30%), url(${image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${
+          isPrimary ? "rgba(0, 30, 60, 0.8)" : "rgba(255, 255, 255, 0.8)"
+        } 30%), url(${image})`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Card header */}
-      <div className="p-6 pb-4 relative z-10">
-        <div className="flex items-center justify-between mb-4">
+      <div className="p-4 pb-2 relative z-10 h-60">
+        <div className="flex items-center justify-between mb-2">
           <Badge className={badgeColor}>{type}</Badge>
           <Badge className={badgeColor}>Essentiel</Badge>
         </div>
-        <h3 className={`text-2xl font-bold ${cardTextColor} mb-6`}>{title}</h3>
+        <h3 className={`text-2xl font-bold ${cardTextColor} mb-4`}>{title}</h3>
       </div>
 
       {/* Card content with accordion */}
-      <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"} relative z-10 bg-opacity-90 ${isPrimary ? 'bg-darkblue-500/90' : 'bg-white/90'} rounded-t-3xl mt-4`}>
+      <div
+        className={`p-4 pt-4 ${
+          isPrimary ? "" : "text-darkblue-800"
+        } relative z-10 bg-opacity-90 ${
+          isPrimary ? "bg-darkblue-500/90" : "bg-white/90"
+        } rounded-t-3xl mt-2`}
+      >
         <Accordion type="single" collapsible className="w-full">
           {features.map((feature, index) => {
             // Split the feature into title and description at the first colon
@@ -92,10 +99,10 @@ const PackageCard = ({
                 value={`item-${index}`}
                 className={accordionBorderColor}
               >
-                <AccordionTrigger className={accordionTriggerColor}>
+                <AccordionTrigger className={`${accordionTriggerColor} py-2`}>
                   {title}
                 </AccordionTrigger>
-                <AccordionContent className={mutedTextColor}>
+                <AccordionContent className={`${mutedTextColor} py-2`}>
                   {description}
                 </AccordionContent>
               </AccordionItem>
@@ -103,10 +110,10 @@ const PackageCard = ({
           })}
         </Accordion>
 
-        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-between mb-4">
+        <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex items-center justify-between mb-2">
             <Badge className={premiumBadgeColor}>
-              <Award size={22} className="mr-3" />
+              <Award size={20} className="mr-2" />
               Premium
             </Badge>
           </div>
@@ -122,10 +129,10 @@ const PackageCard = ({
                   value={`premium-${index}`}
                   className={accordionBorderColor}
                 >
-                  <AccordionTrigger className={accordionTriggerColor}>
+                  <AccordionTrigger className={`${accordionTriggerColor} py-2`}>
                     {title}
                   </AccordionTrigger>
-                  <AccordionContent className={mutedTextColor}>
+                  <AccordionContent className={`${mutedTextColor} py-2`}>
                     {description}
                   </AccordionContent>
                 </AccordionItem>
@@ -134,7 +141,7 @@ const PackageCard = ({
           </Accordion>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <Link to="/contact">
             <Button className={`w-full group ${buttonColor}`}>
               Je me lance !
