@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { X } from 'lucide-react';
+import { X, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
 
@@ -57,6 +57,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, navItems, location, clo
       </nav>
 
       <div className="flex flex-col space-y-4 mt-auto pt-6">
+        <a 
+          href="https://numa.i-numera.com/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="px-6 py-3 font-medium rounded-full transition-all hover:shadow-lg bg-darkblue-800 hover:bg-darkblue-900 text-white text-center flex items-center justify-center"
+          onClick={closeMenu}
+        >
+          i-numa <ExternalLink size={16} className="ml-2" />
+        </a>
         <Link 
           to="/contact" 
           className="px-6 py-3 font-medium rounded-full transition-all hover:shadow-lg bg-red-600 hover:bg-red-700 text-white text-center"

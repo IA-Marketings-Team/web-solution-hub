@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { ExternalLink } from 'lucide-react';
 
 interface DesktopCTAProps {
   scrolled: boolean;
@@ -11,6 +12,17 @@ interface DesktopCTAProps {
 
 const DesktopCTA: React.FC<DesktopCTAProps> = ({ scrolled, isDarkHeader, isContactPage }) => (
   <div className="hidden lg:flex items-center space-x-4">
+    <a 
+      href="https://numa.i-numera.com/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className={cn(
+        "px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg flex items-center",
+        "bg-darkblue-800 hover:bg-darkblue-900 text-white"
+      )}
+    >
+      i-numa <ExternalLink size={14} className="ml-1" />
+    </a>
     <Link 
       to="/contact" 
       className={cn(
