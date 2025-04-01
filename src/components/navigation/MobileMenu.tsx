@@ -57,6 +57,23 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, navItems, location, clo
       </nav>
 
       <div className="flex flex-col space-y-4 mt-auto pt-6">
+        <div className="space-y-4 border-b border-gray-200 pb-4 mb-2">
+          <Link 
+            to="/contact" 
+            className="px-6 py-3 font-medium rounded-full transition-all hover:shadow-lg bg-red-600 hover:bg-red-700 text-white text-center"
+            onClick={closeMenu}
+          >
+            Contactez-nous
+          </Link>
+          <Link 
+            to="/devis" 
+            className="px-6 py-3 font-medium rounded-full transition-all hover:shadow-lg bg-darkblue-800 hover:bg-darkblue-900 text-white text-center"
+            onClick={closeMenu}
+          >
+            Demander un devis
+          </Link>
+        </div>
+        
         <a 
           href="https://numa.i-numera.com/" 
           target="_blank" 
@@ -64,22 +81,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, navItems, location, clo
           className="px-6 py-3 font-medium rounded-full transition-all hover:shadow-lg bg-darkblue-800 hover:bg-darkblue-900 text-white text-center flex items-center justify-center"
           onClick={closeMenu}
         >
-          i-numa <ExternalLink size={16} className="ml-2" />
+          My i-numa <ExternalLink size={16} className="ml-2" />
         </a>
-        <Link 
-          to="/contact" 
-          className="px-6 py-3 font-medium rounded-full transition-all hover:shadow-lg bg-red-600 hover:bg-red-700 text-white text-center"
-          onClick={closeMenu}
-        >
-          Contactez-nous
-        </Link>
-        <Link 
-          to="/devis" 
-          className="px-6 py-3 font-medium rounded-full transition-all hover:shadow-lg bg-darkblue-800 hover:bg-darkblue-900 text-white text-center"
-          onClick={closeMenu}
-        >
-          Demander un devis
-        </Link>
       </div>
     </div>
   </div>

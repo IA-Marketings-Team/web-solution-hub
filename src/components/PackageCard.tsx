@@ -35,8 +35,8 @@ const PackageCard = ({
 }: PackageCardProps) => {
   // Use the site's color scheme with blue and red
   const cardBgColor = isPrimary
-    ? "bg-darkblue-500"
-    : "bg-white border border-gray-200";
+    ? "bg-darkblue-500/90"
+    : "bg-white/90";
 
   const cardTextColor = isPrimary ? "text-white" : "text-darkblue-900";
   const mutedTextColor = isPrimary ? "text-white/80" : "text-darkblue-600";
@@ -61,24 +61,27 @@ const PackageCard = ({
 
   return (
     <Card
-      className={`overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative h-full`}
+      className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative h-full"
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, ${isPrimary ? 'rgba(0, 30, 60, 0.95)' : 'rgba(255, 255, 255, 0.95)'} 30%), url(${image})`,
+        backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
+      {/* Dark overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50 z-0"></div>
+
       {/* Card header */}
       <div className="p-6 pb-4 relative z-10">
         <div className="flex items-center justify-between mb-4">
           <Badge className={badgeColor}>{type}</Badge>
           <Badge className={badgeColor}>Essentiel</Badge>
         </div>
-        <h3 className={`text-2xl font-bold ${cardTextColor} mb-6`}>{title}</h3>
+        <h3 className={`text-2xl font-bold text-white mb-6`}>{title}</h3>
       </div>
 
-      {/* Card content with accordion - updated with more transparent background */}
-      <div className={`p-6 pt-0 ${isPrimary ? "" : "text-darkblue-800"} relative z-10 ${isPrimary ? 'bg-darkblue-500/60' : 'bg-white/70'} backdrop-filter backdrop-blur-sm rounded-t-3xl mt-4`}>
+      {/* Card content with accordion - with translucent background */}
+      <div className={`p-6 pt-0 ${cardTextColor} relative z-10 ${cardBgColor} backdrop-filter backdrop-blur-sm rounded-t-3xl mt-4`}>
         <Accordion type="single" collapsible className="w-full">
           {features.map((feature, index) => {
             // Split the feature into title and description at the first colon
@@ -103,36 +106,38 @@ const PackageCard = ({
           })}
         </Accordion>
 
-        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-between mb-4">
-            <Badge className={premiumBadgeColor}>
-              <Award size={22} className="mr-3" />
-              Premium
-            </Badge>
-          </div>
-          <Accordion type="single" collapsible className="w-full">
-            {premiumFeatures.map((feature, index) => {
-              const parts = feature.split(": ");
-              const title = parts[0];
-              const description = parts.length > 1 ? parts[1] : "";
+        {hasPremium && (
+          <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between mb-4">
+              <Badge className={premiumBadgeColor}>
+                <Award size={22} className="mr-3" />
+                Premium
+              </Badge>
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+              {premiumFeatures.map((feature, index) => {
+                const parts = feature.split(": ");
+                const title = parts[0];
+                const description = parts.length > 1 ? parts[1] : "";
 
-              return (
-                <AccordionItem
-                  key={`premium-${index}`}
-                  value={`premium-${index}`}
-                  className={accordionBorderColor}
-                >
-                  <AccordionTrigger className={accordionTriggerColor}>
-                    {title}
-                  </AccordionTrigger>
-                  <AccordionContent className={mutedTextColor}>
-                    {description}
-                  </AccordionContent>
-                </AccordionItem>
-              );
-            })}
-          </Accordion>
-        </div>
+                return (
+                  <AccordionItem
+                    key={`premium-${index}`}
+                    value={`premium-${index}`}
+                    className={accordionBorderColor}
+                  >
+                    <AccordionTrigger className={accordionTriggerColor}>
+                      {title}
+                    </AccordionTrigger>
+                    <AccordionContent className={mutedTextColor}>
+                      {description}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
+            </Accordion>
+          </div>
+        )}
 
         <div className="mt-8">
           <Link to="/contact">

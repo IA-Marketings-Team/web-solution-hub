@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
@@ -10,9 +11,10 @@ interface ServiceCardProps {
   description: string;
   delay: number;
   className?: string;
+  backgroundImage?: string;
 }
 
-const ServiceCard = ({ icon, title, description, delay, className }: ServiceCardProps) => {
+const ServiceCard = ({ icon, title, description, delay, className, backgroundImage }: ServiceCardProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -22,7 +24,7 @@ const ServiceCard = ({ icon, title, description, delay, className }: ServiceCard
     <div
       ref={ref}
       className={cn(
-        "relative rounded-2xl p-6 hover-lift transition-all border border-gray-100 shadow-sm bg-gradient-to-r from-[#c3cce5] to-[#ecbeb9]",
+        "relative rounded-2xl p-6 hover-lift transition-all border border-gray-100 shadow-sm overflow-hidden",
         className,
         inView ? "opacity-100" : "opacity-0 translate-y-8"
       )}
@@ -33,7 +35,17 @@ const ServiceCard = ({ icon, title, description, delay, className }: ServiceCard
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
       }}
     >
-      <div className="flex flex-col h-full">
+      {/* Background image with gradient overlay */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(195, 204, 229, 0.85), rgba(236, 190, 185, 0.85)), url('${backgroundImage}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      
+      <div className="flex flex-col h-full relative z-10">
         <div className="mb-6">
           <div className="rounded-xl bg-[#D24043]/30 p-3 text-white w-12 h-12 flex items-center justify-center">
             {icon}

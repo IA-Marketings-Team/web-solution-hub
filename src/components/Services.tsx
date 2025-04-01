@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { 
@@ -25,31 +26,36 @@ const Services = () => {
       icon: <Globe size={24} />,
       title: "Création de site internet",
       description: "Des sites web modernes, responsives et optimisés pour convertir vos visiteurs en clients.",
-      delay: 100
+      delay: 100,
+      backgroundImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
     },
     {
       icon: <Search size={24} />,
       title: "Référencement (SEO/SEA)",
       description: "Améliorez votre visibilité en ligne et attirez plus de clients grâce à nos stratégies SEO et SEA.",
-      delay: 200
+      delay: 200,
+      backgroundImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
     },
     {
       icon: <MapPin size={24} />,
       title: "Google My Business",
       description: "Optimisez votre présence locale et apparaissez sur Google Maps pour attirer des clients près de chez vous.",
-      delay: 300
+      delay: 300,
+      backgroundImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
     },
     {
       icon: <BarChart3 size={24} />,
       title: "E-réputation",
       description: "Construisez et maintenez une image positive en ligne avec notre gestion de la e-réputation.",
-      delay: 400
+      delay: 400,
+      backgroundImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
     },
     {
       icon: <Users size={24} />,
       title: "Community Management",
       description: "Engagez votre audience sur les réseaux sociaux avec notre service de gestion de communauté.",
-      delay: 500
+      delay: 500,
+      backgroundImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
     }
   ];
 
@@ -91,6 +97,7 @@ const Services = () => {
               title={card.title}
               description={card.description}
               delay={card.delay}
+              backgroundImage={card.backgroundImage}
             />
           ))}
         </div>
