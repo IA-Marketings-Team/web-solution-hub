@@ -35,11 +35,11 @@ const ServiceCard = ({ icon, title, description, delay, className, backgroundIma
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
       }}
     >
-      {/* Background image with gradient overlay */}
+      {/* Background image with gradient overlay - reduced opacity to make image more visible */}
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(195, 204, 229, 0.85), rgba(236, 190, 185, 0.85)), url('${backgroundImage}')`,
+          backgroundImage: `linear-gradient(to bottom, rgba(195, 204, 229, 0.7), rgba(236, 190, 185, 0.7)), url('${backgroundImage}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -47,7 +47,7 @@ const ServiceCard = ({ icon, title, description, delay, className, backgroundIma
       
       <div className="flex flex-col h-full relative z-10">
         <div className="mb-6">
-          <div className="rounded-xl bg-[#D24043]/30 p-3 text-white w-12 h-12 flex items-center justify-center">
+          <div className="rounded-xl bg-[#D24043]/20 p-3 text-white w-12 h-12 flex items-center justify-center">
             {icon}
           </div>
         </div>
