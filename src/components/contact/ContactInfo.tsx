@@ -43,7 +43,7 @@ const ContactInfo: React.FC = () => {
             <h3 className="font-medium text-lg text-darkblue-900">Téléphone</h3>
             <p className="text-gray-600 mt-1">
               <a href="tel:+33123456789" className="hover:text-red-600 transition-colors">
-              +33 5 54 54 58 60
+              +33 9 85 40 45 63
               </a>
             </p>
           </div>

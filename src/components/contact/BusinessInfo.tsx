@@ -16,7 +16,7 @@ const BusinessInfo: React.FC = () => {
         
         <div>
           <p className="text-gray-700">Vous pouvez nous joindre par téléphone au</p>
-          <p className="font-medium text-lg">+33 5 54 54 58 60</p>
+          <p className="font-medium text-lg">+33 9 85 40 45 63</p>
           <p className="text-gray-700">ou utiliser le formulaire de cette page.</p>
         </div>
         
