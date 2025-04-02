@@ -35,11 +35,11 @@ const PackageCard = ({
 }: PackageCardProps) => {
   // Use the site's color scheme with blue and red
   const cardBgColor = isPrimary
-    ? "bg-darkblue-500/90"
-    : "bg-white/90";
+    ? "bg-transparent"
+    : "bg-transparent";
 
-  const cardTextColor = isPrimary ? "text-white" : "text-darkblue-900";
-  const mutedTextColor = isPrimary ? "text-white/80" : "text-darkblue-600";
+  const cardTextColor = isPrimary ? "text-white" : "text-white";
+  const mutedTextColor = isPrimary ? "text-white/80" : "text-white/80";
   const badgeColor = isPrimary
     ? "bg-white/20 hover:bg-white/30 text-white"
     : "bg-darkblue-100 hover:bg-darkblue-200 text-darkblue-700";
@@ -48,8 +48,8 @@ const PackageCard = ({
     : "bg-red-500 hover:bg-red-600 text-white";
 
   const accordionTriggerColor = isPrimary
-    ? "text-white hover:text-white/90"
-    : "text-darkblue-900 hover:text-darkblue-700";
+    ? "text-white hover:text-white/90 hover:normal"
+    : "text-white/90 hover:text-white/90";
 
   const accordionBorderColor = isPrimary
     ? "border-white/20"

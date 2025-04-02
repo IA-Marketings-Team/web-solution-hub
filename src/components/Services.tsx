@@ -48,14 +48,14 @@ const Services = () => {
       title: "E-réputation",
       description: "Construisez et maintenez une image positive en ligne avec notre gestion de la e-réputation.",
       delay: 400,
-      backgroundImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+      backgroundImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c"
     },
     {
       icon: <Users size={24} />,
       title: "Community Management",
       description: "Engagez votre audience sur les réseaux sociaux avec notre service de gestion de communauté.",
       delay: 500,
-      backgroundImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+      backgroundImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7"
     }
   ];
 
