@@ -22,6 +22,7 @@ export const artisanPackage: PackageData = {
   hasPremium: true,
   premiumFeatures: [
     "i-mailx : Messagerie professionnelle, signature personnalisée, calendrier partagé",
+    "i-phoner : Un réseau d'agents dédiés pour faciliter vos communications et transactions téléphoniques en toute simplicité.",
     "Suivi-expert : Accompagnement personnalisé par un expert dédié, rapports mensuels, optimisation continue"
   ]
 };
@@ -47,6 +48,7 @@ export const commercantPackage: PackageData = {
   hasPremium: true,
   premiumFeatures: [
     "i-mailx : Messagerie professionnelle, signature personnalisée, calendrier partagé",
+    "i-phoner : Un réseau d'agents dédiés pour faciliter vos communications et transactions téléphoniques en toute simplicité.",
     "Suivi-expert : Accompagnement personnalisé par un expert dédié, rapports mensuels, optimisation continue"
   ]
 };

@@ -46,9 +46,9 @@ const FaqSidebar: React.FC = () => {
             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          <p className="text-blue-500 underline">
-            23 rue des Grands Augustins<br />
-            75006 Paris
+          <p className="text-blue-500 ">
+          16 Allée du maine,
+          38130 Grenoble
           </p>
         </div>
       </div>
