@@ -15,8 +15,8 @@ const ContactInfo: React.FC = () => {
           <div>
             <h3 className="font-medium text-lg text-darkblue-900">Adresse</h3>
             <p className="text-gray-600 mt-1">
-              123 Rue de l'Innovation<br />
-              75000 Paris, France
+            16 Allée du maine<br /> 
+            38130 Grenoble
             </p>
           </div>
         </div>
@@ -43,7 +43,7 @@ const ContactInfo: React.FC = () => {
             <h3 className="font-medium text-lg text-darkblue-900">Téléphone</h3>
             <p className="text-gray-600 mt-1">
               <a href="tel:+33123456789" className="hover:text-red-600 transition-colors">
-                +33 1 23 45 67 89
+              +33 5 54 54 58 60
               </a>
             </p>
           </div>

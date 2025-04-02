@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { ExternalLink, ChevronDown } from 'lucide-react';
+import { ExternalLink, ChevronDown, Dot } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,20 +28,20 @@ const DesktopCTA: React.FC<DesktopCTAProps> = ({ scrolled, isDarkHeader, isConta
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuItem asChild>
           <Link to="/contact" className="flex items-center cursor-pointer">
-            Contactez-nous
+            <Dot /> Contactez-nous
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link to="/devis" className="flex items-center cursor-pointer">
-            Demander un devis
+            <Dot /> Demander un devis
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-    
-    <a 
-      href="https://numa.i-numera.com/" 
-      target="_blank" 
+
+    <a
+      href="https://numa.i-numera.com/"
+      target="_blank"
       rel="noopener noreferrer"
       className={cn(
         "px-5 py-2 text-sm font-medium rounded-full transition-all hover:shadow-lg flex items-center",

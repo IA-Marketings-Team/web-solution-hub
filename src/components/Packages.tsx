@@ -3,7 +3,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
 import PackageCard from './PackageCard';
-import { artisanPackage, commercantPackage } from '@/data/packageData';
+import { artisanPackage, commercantPackage, crmPackage } from '@/data/packageData';
 
 const Packages = () => {
   const [ref, inView] = useInView({
@@ -47,6 +47,12 @@ const Packages = () => {
             "transition-all duration-700 delay-300"
           )}>
             <PackageCard {...commercantPackage} />
+          </div>
+          <div className={cn(
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "transition-all duration-700 delay-300"
+          )}>
+            <PackageCard {...crmPackage} />
           </div>
         </div>
       </div>

@@ -50,3 +50,32 @@ export const commercantPackage: PackageData = {
     "Suivi-expert : Accompagnement personnalisé par un expert dédié, rapports mensuels, optimisation continue"
   ]
 };
+
+
+export const crmPackage: PackageData = {
+  type: "Professionel",
+  title: "CRM",
+  price: "50", // Prix mensuel en euros
+  setupFee: "500", // Frais de mise en place en euros
+  image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97", // URL de l'image
+  features: [
+    "Gestion des contacts et des leads : Centralisez et organisez les informations sur vos clients potentiels et existants pour une gestion efficace.",
+    "Automatisation des tâches marketing : Automatisez les tâches répétitives comme l'envoi d'emails et les suivis pour gagner du temps et améliorer l'efficacité.",
+    "Suivi des interactions clients : Enregistrez toutes les interactions avec vos clients pour une meilleure gestion de la relation et un suivi personnalisé.",
+    "Tableaux de bord et rapports personnalisés : Utilisez des outils d'analyse pour suivre les performances et prendre des décisions éclairées grâce à des rapports détaillés.",
+    "Intégration avec les outils de messagerie et les réseaux sociaux : Synchronisez vos communications et interactions sur différentes plateformes pour une gestion unifiée.",
+    "Support client 24/7 : Bénéficiez d'une assistance disponible à tout moment pour résoudre les problèmes techniques ou d'utilisation.",
+    "Formation initiale et accompagnement : Recevez une formation initiale et un accompagnement pour prendre en main l'outil et en tirer le meilleur parti.",
+    "Mises à jour régulières et maintenance : Assurez-vous que le système reste à jour et fonctionnel avec des mises à jour régulières et une maintenance continue."
+  ],
+  isPrimary: false,
+  hasPremium: true,
+  premiumFeatures: [
+    "Fonctionnalités avancées de segmentation : Ciblez plus précisément vos clients en fonction de critères spécifiques pour des campagnes marketing plus efficaces.",
+    "Campagnes marketing multicanal : Gérez des campagnes sur plusieurs canaux (email, réseaux sociaux, etc.) de manière coordonnée pour une meilleure portée.",
+    "Analyse prédictive et scoring des leads : Utilisez des algorithmes pour prédire quels leads sont les plus susceptibles de se convertir en clients et optimisez vos efforts de vente.",
+    "Support dédié et gestion de compte : Bénéficiez d'un gestionnaire de compte dédié pour un accompagnement personnalisé et une assistance sur mesure.",
+    "Accès à des webinaires et formations exclusives : Participez à des formations continues pour améliorer vos compétences et rester à jour sur les meilleures pratiques."
+  ]
+};
+
