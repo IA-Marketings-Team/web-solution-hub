@@ -53,7 +53,7 @@ export const commercantPackage: PackageData = {
   ]
 };
 
-
+//CRM
 export const crmPackage: PackageData = {
   type: "Professionel",
   title: "CRM",
@@ -80,4 +80,32 @@ export const crmPackage: PackageData = {
     "Accès à des webinaires et formations exclusives : Participez à des formations continues pour améliorer vos compétences et rester à jour sur les meilleures pratiques."
   ]
 };
+
+
+//ERP
+export const erpPackage: PackageData = {
+  type: "Entreprise",
+  title: "ERP",
+  price: "150", // Prix mensuel en euros
+  setupFee: "5000", // Frais de mise en place en euros
+  image: "https://images.unsplash.com/photo-1571677246347-5040036b95cc?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // URL de l'image
+  features: [
+    "Gestion intégrée des processus métiers : Centralisez et optimisez les opérations clés telles que la finance, la chaîne d'approvisionnement, et les ressources humaines pour une gestion efficace.",
+    "Automatisation des tâches administratives : Automatisez les tâches répétitives comme la gestion des stocks et les suivis pour gagner du temps et améliorer l'efficacité.",
+    "Suivi des performances en temps réel : Accédez à des tableaux de bord et des rapports en temps réel pour suivre les performances et prendre des décisions éclairées.",
+    "Intégration avec les outils de messagerie et les réseaux sociaux : Synchronisez vos communications et interactions sur différentes plateformes pour une gestion unifiée.",
+    "Support client 24/7 : Bénéficiez d'une assistance disponible à tout moment pour résoudre les problèmes techniques ou d'utilisation.",
+    "Formation initiale et accompagnement : Recevez une formation initiale et un accompagnement pour prendre en main l'outil et en tirer le meilleur parti.",
+    "Mises à jour régulières et maintenance : Assurez-vous que le système reste à jour et fonctionnel avec des mises à jour régulières et une maintenance continue."
+  ],
+  isPrimary: false,
+  hasPremium: true,
+  premiumFeatures: [
+    "Fonctionnalités avancées de gestion de la chaîne d'approvisionnement : Optimisez votre chaîne d'approvisionnement avec des outils avancés pour une meilleure gestion des stocks et des approvisionnements.",
+    "Analyse prédictive et intelligence artificielle : Utilisez des algorithmes pour prédire les tendances et optimiser vos opérations grâce à l'intelligence artificielle.",
+    "Support dédié et gestion de compte : Bénéficiez d'un gestionnaire de compte dédié pour un accompagnement personnalisé et une assistance sur mesure.",
+    "Accès à des webinaires et formations exclusives : Participez à des formations continues pour améliorer vos compétences et rester à jour sur les meilleures pratiques."
+  ]
+};
+
 

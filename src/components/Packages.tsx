@@ -3,7 +3,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
 import PackageCard from './PackageCard';
-import { artisanPackage, commercantPackage, crmPackage } from '@/data/packageData';
+import { artisanPackage, commercantPackage, crmPackage, erpPackage } from '@/data/packageData';
 
 const Packages = () => {
   const [ref, inView] = useInView({
@@ -12,7 +12,7 @@ const Packages = () => {
   });
 
   return (
-    <section className="py-20 bg-gray-50" id="packages">
+    <section className="py-0 bg-gray-50" id="packages">
       <div className="container px-4 md:px-6">
         <div 
           ref={ref}
@@ -35,7 +35,7 @@ const Packages = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="text-left grid md:grid-cols-4 gap-5 mb-5 " style={{textAlign:"left"}} >
           <div className={cn(
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
             "transition-all duration-700 delay-100"
@@ -53,6 +53,12 @@ const Packages = () => {
             "transition-all duration-700 delay-300"
           )}>
             <PackageCard {...crmPackage} />
+          </div>
+          <div className={cn(
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+            "transition-all duration-700 delay-300"
+          )}>
+            <PackageCard {...erpPackage} />
           </div>
         </div>
       </div>

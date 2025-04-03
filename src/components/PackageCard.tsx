@@ -24,6 +24,18 @@ export interface PackageCardProps {
   premiumFeatures?: string[];
 }
 
+// Définir un objet de mappage des couleurs pour chaque type
+const typeColors = {
+  Artisans: "bg-orange-200 hover:bg-orange-300 text-orange-800",
+  Commerçants: "bg-lime-200 hover:bg-lime-300 text-lime-800",
+  Professionnel: "bg-[#2dd4bf] hover:bg-[#14b8a6] text-[#115e59]",
+  Entreprise: "bg-yellow-200 hover:bg-yellow-300 text-yellow-800",
+};
+
+// Fonction pour obtenir la couleur du badge en fonction du type
+function getBadgeColorByType(type) {
+  return typeColors[type] || "bg-gray-200 hover:bg-gray-300 text-gray-800";
+}
 const PackageCard = ({
   type,
   title,
@@ -40,16 +52,15 @@ const PackageCard = ({
 
   const cardTextColor = isPrimary ? "text-white" : "text-white";
   const mutedTextColor = isPrimary ? "text-white/80" : "text-white/80";
-  const badgeColor = isPrimary
-    ? "bg-white/20 hover:bg-white/30 text-white"
-    : "bg-darkblue-100 hover:bg-darkblue-200 text-darkblue-700";
+  // Obtenir la couleur du badge en fonction du type
+  const badgeColor = getBadgeColorByType(type);
   const buttonColor = isPrimary
     ? "bg-white text-darkblue-700 hover:bg-gray-100"
     : "bg-red-500 hover:bg-red-600 text-white";
 
   const accordionTriggerColor = isPrimary
-    ? "text-white hover:text-white/90 hover:normal"
-    : "text-white/90 hover:text-white/90";
+    ? "text-white text-left hover:text-white/90 hover:no-underline"
+    : "text-white/90 text-left hover:text-white/90 hover:no-underline";
 
   const accordionBorderColor = isPrimary
     ? "border-white/20"
@@ -61,7 +72,7 @@ const PackageCard = ({
 
   return (
     <Card
-      className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative h-full"
+      className="overflow-hidden w-full rounded-xl shadow-md hover:shadow-lg transition-all duration-300 relative h-full"
       style={{
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
@@ -81,7 +92,7 @@ const PackageCard = ({
       </div>
 
       {/* Card content with accordion - with translucent background */}
-      <div className={`p-6 pt-0 ${cardTextColor} relative z-10 ${cardBgColor} backdrop-filter backdrop-blur-sm rounded-t-3xl mt-4`}>
+      <div className={`p-6 pt-0 ${cardTextColor} relative z-10 ${cardBgColor} backdrop-filter text-left backdrop-blur-sm rounded-t-3xl mt-4`}>
         <Accordion type="single" collapsible className="w-full">
           {features.map((feature, index) => {
             // Split the feature into title and description at the first colon
