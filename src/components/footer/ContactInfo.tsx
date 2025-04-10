@@ -10,7 +10,7 @@ const ContactInfo: React.FC = () => {
         <li className="flex items-start">
           <MapPin size={18} className="text-red-500 mr-3 mt-1 flex-shrink-0" />
           <span className="text-darkblue-700">
-            16 Allée du maine 38130 Grenoble
+            131, Continental Dr, Suite 305 <br>Newark, DE 19713 <br>United States
           </span>
         </li>
         <li className="flex items-center">
