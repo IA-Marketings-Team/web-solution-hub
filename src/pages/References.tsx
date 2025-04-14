@@ -62,6 +62,7 @@ const References = () => {
           className="mb-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/*
             {referenceData.map((reference, index) => (
               <ReferenceCard
                 key={reference.id}
@@ -69,6 +70,7 @@ const References = () => {
                 index={index}
               />
             ))}
+              */}
           </div>
         </motion.div>
 

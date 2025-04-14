@@ -34,14 +34,7 @@ export const referenceCategories: ReferenceCategory[] = [
 ];
 
 export const referenceData: Reference[] = [
-  {
-    id: "GeoArchitectural",
-    name: "GeoArchitectural",
-    sector: "Architecture, BTP",
-    description: "GeoArchitectural est un acteur clé dans le domaine de l'architecture et du BTP, spécialisé dans la conception et l'aménagement de projets urbains et de bâtiments. Avec une expertise reconnue en conception de structures innovantes et durables, l'entreprise offre des solutions sur-mesure pour des projets résidentiels, commerciaux et publics, en veillant à intégrer harmonieusement l'environnement naturel dans chaque projet.",
-    url: "",
-    categoryId: "websites"
-  },  
+  
  /*  {
     id: "poissonnerie-michelet",
     name: "Poissonnerie Michelet",
